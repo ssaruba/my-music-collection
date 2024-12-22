@@ -3,23 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Music Collection</title>
+    <title>My Music</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            font-weight: bold;
+        }
+        img {
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+        }
+        audio, button, select {
+            margin: 10px auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Music Collection</h1>
+    <h1>My Music</h1>
+    <p>Fröhliche Weihnachten Papa! Hier findest du eine Sammlung von meiner Musik, die du direkt über PC oder dein Handy abspielen kannst!</p>
 
     <!-- Album 1 -->
     <h2>HOME IS WHERE THE DUST IS</h2>
     <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
-         alt="HOME IS WHERE THE DUST IS - Album Cover" 
-         style="max-width: 300px; display: block; margin-bottom: 20px;">
+         alt="HOME IS WHERE THE DUST IS - Album Cover">
     
     <audio id="audio-player" controls>
         Your browser does not support the audio element.
     </audio>
+    
+    <div>
+        <button id="prev-btn">⏮ Previous</button>
+        <button id="next-btn">⏭ Next</button>
+    </div>
+    
+    <select id="track-list">
+        <option value="0">I Don't Wanna Ruin It</option>
+        <option value="1">Everything I Am</option>
+        <option value="2">Purple Tree</option>
+        <option value="3">Friends</option>
+        <option value="4">Jock</option>
+        <option value="5">Human Emotional Experience</option>
+    </select>
+
+    <!-- Album 2 -->
+    <h2>Electric Emotions</h2>
+    <img src="Electric Emotions/ELECTRIC EMOTIONS - COVER.png" alt="Electric Emotions Album Cover">
+
+    <audio id="electric-audio-player" controls>
+        Your browser does not support the audio element.
+    </audio>
+
+    <select id="electric-track-list">
+        <option value="0">Diva Dreams (Intro)</option>
+        <option value="1">Epiphany</option>
+        <option value="2">One Day A Computer Will Fit In Our Brain</option>
+        <option value="3">Electro Boy</option>
+        <option value="4">Kids 3</option>
+        <option value="5">Hawkins</option>
+        <option value="6">Don't Forget About Me</option>
+        <option value="7">Neon Tears (Intermission)</option>
+        <option value="8">198x</option>
+        <option value="9">Policy Of Truth (SelfWave Remix)</option>
+        <option value="10">011</option>
+        <option value="11">Rewind</option>
+        <option value="12">Comeback Kid (SelfWave Remix)</option>
+        <option value="13">Midnight Escape</option>
+        <option value="14">Stay With Me</option>
+        <option value="15">DX Dreams (Bonus Track)</option>
+        <option value="16">Disco Queen (Bonus Track)</option>
+        <option value="17">Gloria (Bonus Track)</option>
+    </select>
+
+    <p>Vielen Dank, dass du vorbeischaust! Musik ist immer besser, wenn sie geteilt wird. 🎵</p>
 
     <script>
-        // List of audio tracks for the album
+        // Tracks for HOME IS WHERE THE DUST IS
         const tracks = [
             "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
             "HOME IS WHERE THE DUST IS/everything i am.mp3",
@@ -30,25 +95,76 @@
         ];
 
         let currentTrack = 0;
-
         const audioPlayer = document.getElementById("audio-player");
+        const trackList = document.getElementById("track-list");
 
         // Load the first track
         audioPlayer.src = tracks[currentTrack];
 
-        // Play the next track automatically when the current one ends
-        audioPlayer.addEventListener("ended", () => {
-            currentTrack++;
-            if (currentTrack < tracks.length) {
-                audioPlayer.src = tracks[currentTrack];
-                audioPlayer.play();
-            }
+        // Play selected track
+        trackList.addEventListener("change", (e) => {
+            currentTrack = parseInt(e.target.value);
+            audioPlayer.src = tracks[currentTrack];
+            audioPlayer.play();
         });
 
-        // Optional: preload tracks for smoother transitions
-        for (let i = 1; i < tracks.length; i++) {
-            const audio = new Audio(tracks[i]);
-        }
+        // Play the next track
+        document.getElementById("next-btn").addEventListener("click", () => {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            audioPlayer.src = tracks[currentTrack];
+            audioPlayer.play();
+        });
+
+        // Play the previous track
+        document.getElementById("prev-btn").addEventListener("click", () => {
+            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+            audioPlayer.src = tracks[currentTrack];
+            audioPlayer.play();
+        });
+
+        // Play next track automatically when the current one ends
+        audioPlayer.addEventListener("ended", () => {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            audioPlayer.src = tracks[currentTrack];
+            audioPlayer.play();
+        });
+
+        // Tracks for Electric Emotions
+        const electricTracks = [
+            "Electric Emotions/diva dreams (intro).mp3",
+            "Electric Emotions/epiphany.mp3",
+            "Electric Emotions/one day a computer will fit in our brain.mp3",
+            "Electric Emotions/electro boy.mp3",
+            "Electric Emotions/kids 3.mp3",
+            "Electric Emotions/hawkins.mp3",
+            "Electric Emotions/don't forget about me.mp3",
+            "Electric Emotions/neon tears (intermission).mp3",
+            "Electric Emotions/198x.mp3",
+            "Electric Emotions/policy of truth (selfwave remix).mp3",
+            "Electric Emotions/011.mp3",
+            "Electric Emotions/rewind.mp3",
+            "Electric Emotions/comeback kid (selfwave remix).mp3",
+            "Electric Emotions/midnight escape.mp3",
+            "Electric Emotions/stay with me.mp3",
+            "Electric Emotions/dx dreams (bonus track).mp3",
+            "Electric Emotions/disco queen (bonus track).mp3",
+            "Electric Emotions/gloria (bonus track).mp3"
+        ];
+
+        let currentElectricTrack = 0;
+        const electricAudioPlayer = document.getElementById("electric-audio-player");
+        const electricTrackList = document.getElementById("electric-track-list");
+
+        // Load the first electric track
+        electricAudioPlayer.src = electricTracks[currentElectricTrack];
+
+        // Play selected electric track
+        electricTrackList.addEventListener("change", (e) => {
+            currentElectricTrack = parseInt(e.target.value);
+            electricAudioPlayer.src = electricTracks[currentElectricTrack];
+            electricAudioPlayer.play();
+        });
+
     </script>
 </body>
 </html>
