@@ -9,31 +9,46 @@
     <h1>My Music Collection</h1>
 
     <!-- Album 1 -->
-    <h2>Album 1</h2>
-    <p>Track 1</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3" type="audio/mpeg">
+    <h2>HOME IS WHERE THE DUST IS</h2>
+    <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
+         alt="HOME IS WHERE THE DUST IS - Album Cover" 
+         style="max-width: 300px; display: block; margin-bottom: 20px;">
+    
+    <audio id="audio-player" controls>
         Your browser does not support the audio element.
     </audio>
-    <p>Track 2</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/everything i am.mp3" type="audio/mpeg">
-    </audio>
-    <p>Track 3</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/purple tree.mp3" type="audio/mpeg">
-    </audio>
-    <p>Track 2</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/friends.mp3" type="audio/mpeg">
-    </audio>
-    <p>Track 2</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/jock.mp3" type="audio/mpeg">
-    </audio>
-    <p>Track 2</p>
-    <audio controls>
-        <source src="HOME IS WHERE THE DUST IS/human emotional experience.mp3" type="audio/mpeg">
-    </audio>
+
+    <script>
+        // List of audio tracks for the album
+        const tracks = [
+            "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
+            "HOME IS WHERE THE DUST IS/everything i am.mp3",
+            "HOME IS WHERE THE DUST IS/purple tree.mp3",
+            "HOME IS WHERE THE DUST IS/friends.mp3",
+            "HOME IS WHERE THE DUST IS/jock.mp3",
+            "HOME IS WHERE THE DUST IS/human emotional experience.mp3"
+        ];
+
+        let currentTrack = 0;
+
+        const audioPlayer = document.getElementById("audio-player");
+
+        // Load the first track
+        audioPlayer.src = tracks[currentTrack];
+
+        // Play the next track automatically when the current one ends
+        audioPlayer.addEventListener("ended", () => {
+            currentTrack++;
+            if (currentTrack < tracks.length) {
+                audioPlayer.src = tracks[currentTrack];
+                audioPlayer.play();
+            }
+        });
+
+        // Optional: preload tracks for smoother transitions
+        for (let i = 1; i < tracks.length; i++) {
+            const audio = new Audio(tracks[i]);
+        }
+    </script>
 </body>
 </html>
