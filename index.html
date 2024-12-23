@@ -18,6 +18,10 @@
         .bonus {
             font-size: 0.9em;
         }
+        .album {
+            margin: 40px auto;
+            max-width: 600px;
+        }
         img {
             max-width: 300px;
             margin: 20px auto;
@@ -25,6 +29,7 @@
         }
         audio, button, select {
             margin: 10px auto;
+            display: block;
         }
         .snowflake {
             color: #ffffff;
@@ -44,7 +49,7 @@
     <p>Fröhliche Weihnachten Papa! Hier findest du eine Sammlung von meiner Musik, die du direkt über PC oder dein Handy abspielen kannst!</p>
 
     <!-- Christmas Bonus Album -->
-    <div class="bonus">
+    <div class="bonus album">
         <h2>Christmas</h2>
         <img src="Christmas/CHRISTMAS - COVER.jpg" alt="Christmas Album Cover">
         <audio id="christmas-audio-player" controls>
@@ -57,101 +62,107 @@
     </div>
 
     <!-- Album 1 -->
-    <h2>HOME IS WHERE THE DUST IS</h2>
-    <div id="current-home-song">Currently playing: </div>
-    <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
-         alt="HOME IS WHERE THE DUST IS - Album Cover">
-    
-    <audio id="audio-player" controls>
-        Your browser does not support the audio element.
-    </audio>
-    
-    <div>
-        <button id="prev-btn">⏮ Previous</button>
-        <button id="next-btn">⏭ Next</button>
+    <div class="album">
+        <h2>HOME IS WHERE THE DUST IS</h2>
+        <div id="current-home-song">Currently playing: </div>
+        <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
+             alt="HOME IS WHERE THE DUST IS - Album Cover">
+        <audio id="audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <div>
+            <button id="prev-btn">⏮ Previous</button>
+            <button id="next-btn">⏭ Next</button>
+        </div>
+        <select id="track-list">
+            <option value="0">I DON'T WANNA RUIN IT</option>
+            <option value="1">EVERYTHING I AM</option>
+            <option value="2">PURPLE TREE</option>
+            <option value="3">FRIENDS</option>
+            <option value="4">JOCK</option>
+            <option value="5">HUMAN EMOTIONAL EXPERIENCE</option>
+        </select>
     </div>
-    
-    <select id="track-list">
-        <option value="0">I DON'T WANNA RUIN IT</option>
-        <option value="1">EVERYTHING I AM</option>
-        <option value="2">PURPLE TREE</option>
-        <option value="3">FRIENDS</option>
-        <option value="4">JOCK</option>
-        <option value="5">HUMAN EMOTIONAL EXPERIENCE</option>
-    </select>
 
     <!-- Album 2 -->
-    <h2>Electric Emotions</h2>
-    <div id="current-electric-song">Currently playing: </div>
-    <img src="Electric Emotions/ELECTRIC EMOTIONS - COVER.png" alt="Electric Emotions Album Cover">
-
-    <audio id="electric-audio-player" controls>
-        Your browser does not support the audio element.
-    </audio>
-
-    <select id="electric-track-list">
-        <option value="0">Diva Dreams (Intro)</option>
-        <option value="1">Epiphany</option>
-        <option value="2">One Day A Computer Will Fit In Our Brain</option>
-        <option value="3">Electro Boy</option>
-        <option value="4">Kids 3</option>
-        <option value="5">Hawkins</option>
-        <option value="6">Don't Forget About Me</option>
-        <option value="7">Neon Tears (Intermission)</option>
-        <option value="8">198x</option>
-        <option value="9">Policy Of Truth (SelfWave Remix)</option>
-        <option value="10">011</option>
-        <option value="11">Rewind</option>
-        <option value="12">Comeback Kid (SelfWave Remix)</option>
-        <option value="13">Midnight Escape</option>
-        <option value="14">Stay With Me</option>
-        <option value="15">DX Dreams (Bonus Track)</option>
-        <option value="16">Disco Queen (Bonus Track)</option>
-        <option value="17">Gloria (Bonus Track)</option>
-    </select>
+    <div class="album">
+        <h2>Electric Emotions</h2>
+        <div id="current-electric-song">Currently playing: </div>
+        <img src="Electric Emotions/ELECTRIC EMOTIONS - COVER.png" alt="Electric Emotions Album Cover">
+        <audio id="electric-audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <select id="electric-track-list">
+            <option value="0">Diva Dreams (Intro)</option>
+            <option value="1">Epiphany</option>
+            <option value="2">One Day A Computer Will Fit In Our Brain</option>
+            <option value="3">Electro Boy</option>
+            <option value="4">Kids 3</option>
+            <option value="5">Hawkins</option>
+            <option value="6">Don't Forget About Me</option>
+            <option value="7">Neon Tears (Intermission)</option>
+            <option value="8">198x</option>
+            <option value="9">Policy Of Truth (SelfWave Remix)</option>
+            <option value="10">011</option>
+            <option value="11">Rewind</option>
+            <option value="12">Comeback Kid (SelfWave Remix)</option>
+            <option value="13">Midnight Escape</option>
+            <option value="14">Stay With Me</option>
+            <option value="15">DX Dreams (Bonus Track)</option>
+            <option value="16">Disco Queen (Bonus Track)</option>
+            <option value="17">Gloria (Bonus Track)</option>
+        </select>
+    </div>
 
     <!-- Additional Albums -->
-    <h2>cute little world</h2>
-    <div id="current-cute-song">Currently playing: </div>
-    <img src="cute little world/CUTE LITTLE WORLD - COVER.jpg" alt="Cute Little World Album Cover">
-    <audio id="cute-audio-player" controls>
-        Your browser does not support the audio element.
-    </audio>
-    <select id="cute-track-list">
-        <option value="0">cute little world</option>
-        <option value="1">Our Planet</option>
-    </select>
+    <div class="album">
+        <h2>Cute Little World</h2>
+        <div id="current-cute-song">Currently playing: </div>
+        <img src="cute little world/CUTE LITTLE WORLD - COVER.png" alt="Cute Little World Album Cover">
+        <audio id="cute-audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <select id="cute-track-list">
+            <option value="0">Cute Little World</option>
+            <option value="1">Our Planet</option>
+        </select>
+    </div>
 
-    <h2>PC</h2>
-    <div id="current-pc-song">Currently playing: </div>
-    <img src="PC/PC - COVER.png" alt="PC Album Cover">
-    <audio id="pc-audio-player" controls>
-        Your browser does not support the audio element.
-    </audio>
-    <select id="pc-track-list">
-        <option value="0">PC</option>
-        <option value="1">Control</option>
-        <option value="2">Bloodbath</option>
-        <option value="3">The Gear Machine</option>
-        <option value="4">XP</option>
-    </select>
+    <div class="album">
+        <h2>PC</h2>
+        <div id="current-pc-song">Currently playing: </div>
+        <img src="PC/PC - COVER.png" alt="PC Album Cover">
+        <audio id="pc-audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <select id="pc-track-list">
+            <option value="0">PC</option>
+            <option value="1">Control</option>
+            <option value="2">Bloodbath</option>
+            <option value="3">The Gear Machine</option>
+            <option value="4">XP</option>
+        </select>
+    </div>
 
-    <h2>Untitled</h2>
-    <div id="current-untitled-song">Currently playing: </div>
-    <img src="Untitled/UNTITLED - COVER.jpg" alt="Untitled Album Cover">
-    <audio id="untitled-audio-player" controls>
-        Your browser does not support the audio element.
-    </audio>
-    <select id="untitled-track-list">
-        <option value="0">Afterlife</option>
-        <option value="1">Another Earth</option>
-        <option value="2">Spider</option>
-        <option value="3">Wrapped in Anansi's Web</option>
-    </select>
+    <div class="album">
+        <h2>Untitled</h2>
+        <div id="current-untitled-song">Currently playing: </div>
+        <img src="Untitled/UNTITLED - COVER.jpg" alt="Untitled Album Cover">
+        <audio id="untitled-audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <select id="untitled-track-list">
+            <option value="0">Afterlife</option>
+            <option value="1">Another Earth</option>
+            <option value="2">Spider</option>
+            <option value="3">Wrapped in Anansi's Web</option>
+        </select>
+    </div>
 
     <p>Vielen Dank, dass du vorbeischaust! Musik ist immer besser, wenn sie geteilt wird. 🎵</p>
 
     <script>
+        // Updated paths for correctness
         const christmasTracks = [
             "Christmas/merry christmas.mp3",
             "Christmas/canon in d major - remix.mp3"
@@ -159,7 +170,7 @@
         let currentChristmasTrack = 0;
         const christmasAudioPlayer = document.getElementById("christmas-audio-player");
         const christmasTrackList = document.getElementById("christmas-track-list");
-        const snowflakes = [];
+        let snowflakeInterval;
 
         christmasAudioPlayer.src = christmasTracks[currentChristmasTrack];
 
@@ -173,8 +184,27 @@
             setTimeout(() => snowflake.remove(), 5000);
         }
 
+        function startSnowEffect() {
+            if (!snowflakeInterval) {
+                snowflakeInterval = setInterval(createSnowflake, 200);
+            }
+        }
+
+        function stopSnowEffect() {
+            clearInterval(snowflakeInterval);
+            snowflakeInterval = null;
+        }
+
         christmasAudioPlayer.addEventListener("play", () => {
-            setInterval(createSnowflake, 200);
+            startSnowEffect();
+        });
+
+        christmasAudioPlayer.addEventListener("pause", () => {
+            stopSnowEffect();
+        });
+
+        christmasAudioPlayer.addEventListener("ended", () => {
+            stopSnowEffect();
         });
 
         christmasTrackList.addEventListener("change", (e) => {
