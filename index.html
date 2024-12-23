@@ -30,12 +30,17 @@
 
         /* Marquee Styling */
         marquee {
+            font-family: "Impact", sans-serif; /* Early 2000s font */
             font-size: 1.2em;
             color: #0070cb;
             font-weight: bold;
             text-shadow: 1px 1px 2px black;
             margin: 10px 0;
-        }
+            background: rgba(255, 255, 255, 0.8); /* Light transparent background */
+            border-radius: 10px; /* Rounded corners */
+            padding: 5px 10px; /* Padding inside the marquee */
+            border: 2px solid #0070cb; /* Optional border for a 2000s aesthetic */
+}
 
         /* Blinking Text */
         .blink {
@@ -105,6 +110,7 @@
         }
         select, .controls {
             margin-top: 20px; /* Adjust the value as needed */
+            margin-bottom: 20px; /* Adds space between controls and the next section */
         }
 
     </style>
@@ -117,7 +123,28 @@
     <h1 class="title comic-sans">Samuel's Sound Vault</h1>
 
     <!-- Blinking Text -->
-    <p class="blink">Fröhliche Weihnachten Papa! 🎄</p>
+    <p class="blink">Fröhliche Weihnachten Papa und Opa! 🎄</p>
+
+    <!-- Early 2000s-style YouTube Link -->
+        <p style="margin-top: 20px;">
+            <a href="https://www.youtube.com/channel/UC8iEh01foeh_j337cCu1_CQ" target="_blank" style="
+                font-family: 'Verdana', sans-serif;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #ff6600;
+                text-decoration: none;
+                background: linear-gradient(90deg, #ff9900, #ff6600);
+                padding: 10px 15px;
+                border: 2px solid #ff6600;
+                border-radius: 10px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                text-shadow: 1px 1px 2px black;
+                display: inline-block;
+            ">
+        Visit my YouTube Channel! 🎥
+    </a>
+</p>
+
 
     <!-- Pixel Divider -->
     <div class="pixel-divider"></div>
@@ -159,6 +186,24 @@
         </select>
     </div>
 
+    <!-- Tree Album -->
+    <div class="album">
+        <h2>Tree (New)</h2>
+        <div id="current-tree-song">Currently playing: purple tree</div>
+        <img src="Tree/TREE - COVER.png" alt="Tree Album Cover">
+        <audio id="tree-audio-player" controls></audio>
+        <div class="controls">
+            <button id="tree-prev-btn">⏮ Previous</button>
+            <button id="tree-next-btn">⏭ Next</button>
+        </div>
+        <select id="tree-track-list">
+            <option value="0">purple tree</option>
+            <option value="1">are you afraid of god?</option>
+            <option value="2">blind to all</option>
+            <option value="3">friends</option>
+        </select>
+    </div>
+
         <!-- PC Album -->
     <div class="album">
         <h2>PC (NEW)</h2>
@@ -178,7 +223,7 @@
 
     <!-- Electric Emotions Album -->
     <div class="album">
-        <h2>Electric Emotions</h2>
+        <h2>Electric Emotions (NEW BONUS TRACKS)</h2>
         <div id="current-electric-song">Currently playing: Diva Dreams (Intro)</div>
         <img src="Electric Emotions/ELECTRIC EMOTIONS - COVER.png" alt="Electric Emotions Album Cover">
         <audio id="electric-audio-player" controls></audio>
@@ -202,7 +247,7 @@
             <option value="12">Comeback Kid (SelfWave Remix)</option>
             <option value="13">Midnight Escape</option>
             <option value="14">Stay With Me</option>
-            <option value="15">It Follows (Bonus Track)</option>
+            <option value="15">Elegy</option>
             <option value="16">DX Dreams (Bonus Track)</option>
             <option value="17">Disco Queen (Bonus Track)</option>
             <option value="18">Gloria (Bonus Track)</option>
@@ -249,7 +294,7 @@
             <option value="10">HAL-9000</option>
             <option value="11">Mother Machine</option>
             <option value="12">2414 予鋼プ</option>
-            <option value="13">ufo</option>
+            <option value="13">UFO</option>
             <option value="14">People are People</option>
             <option value="15">Electric</option>
             <option value="16">Joyride</option>
@@ -276,19 +321,17 @@
         <select id="untitled-track-list">
             <option value="0">Afterlife</option>
             <option value="1">Another Earth</option>
-            <option value="2">Are You Afraid of God</option>
-            <option value="3">Bloodbath</option>
-            <option value="4">Close My Eyes</option>
-            <option value="5">Control</option>
-            <option value="6">Eyes</option>
-            <option value="7">LIFE</option>
-            <option value="8">Magic</option>
-            <option value="9">Ramune</option>
-            <option value="10">Sea of Static</option>
-            <option value="11">Spider</option>
-            <option value="12">The Machine Is Alive</option>
-            <option value="13">Virtual Echo</option>
-            <option value="14">Wrapped in Anansi's Web</option>
+            <option value="2">Bloodbath</option>
+            <option value="3">Close My Eyes</option>
+            <option value="4">Control</option>
+            <option value="5">LIFE</option>
+            <option value="6">Magic</option>
+            <option value="7">Ramune</option>
+            <option value="8">Sea of Static</option>
+            <option value="9">Spider</option>
+            <option value="10">The Machine Is Alive</option>
+            <option value="11">Virtual Echo</option>
+            <option value="12">Wrapped in Anansi's Web</option>
         </select>
         
     </div>
@@ -326,8 +369,6 @@
             "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
             "HOME IS WHERE THE DUST IS/93.mp3",
             "HOME IS WHERE THE DUST IS/everything i am.mp3",
-            "HOME IS WHERE THE DUST IS/purple tree.mp3",
-            "HOME IS WHERE THE DUST IS/friends.mp3",
             "HOME IS WHERE THE DUST IS/jock.mp3",
             "HOME IS WHERE THE DUST IS/human emotional experience.mp3",
         ],
@@ -338,6 +379,24 @@
         prevBtn: document.getElementById("home-prev-btn"),
         nextBtn: document.getElementById("home-next-btn"),
     },
+
+    {
+        id: "tree",
+        tracks: [
+            "Tree/purple tree.mp3",
+            "Tree/are you afraid of god.mp3",
+            "Tree/blind to all.mp3",
+            "Tree/friends.mp3",
+        ],
+        currentTrack: 0,
+        audioPlayer: document.getElementById("tree-audio-player"),
+        trackList: document.getElementById("tree-track-list"),
+        currentSongDisplay: document.getElementById("current-tree-song"),
+        prevBtn: document.getElementById("tree-prev-btn"),
+        nextBtn: document.getElementById("tree-next-btn"),
+    },
+
+
     {
         id: "electric",
         tracks: [
@@ -356,7 +415,7 @@
             "Electric Emotions/Comeback Kid (SelfWave Remix).mp3",
             "Electric Emotions/Midnight Escape.mp3",
             "Electric Emotions/Stay with me.mp3",
-            "Electric Emotions/it follows.mp3",
+            "Electric Emotions/Elegy.mp3",
             "Electric Emotions/DX Dreams.mp3",
             "Electric Emotions/Disco Queen.mp3",
             "Electric Emotions/Gloria.mp3",
@@ -385,7 +444,8 @@
         id: "pc",
         tracks: [
             "PC/PC.mp3",
-            "PC/Quarantine.mp3",
+            "PC/EY.mp3",
+            "PC/QA.mp3",
             "PC/XP.mp3",
         ],
         currentTrack: 0,
@@ -400,11 +460,9 @@
         tracks: [
             "Untitled/Afterlife.mp3",
             "Untitled/Another Earth.mp3",
-            "Untitled/are you afraid of god.mp3",
             "Untitled/Bloodbath.mp3",
             "Untitled/close my eyes.mp3",
             "Untitled/Control.mp3",
-            "Untitled/eyes.mp3",
             "Untitled/LIFE.mp3",
             "Untitled/magic.mp3",
             "Untitled/ramune.mp3",
@@ -437,14 +495,14 @@
             "Creations/T-800.mp3",
             "Creations/HAL 9000.flac",
             "Creations/Mother Machine.flac",
-            "Creations/2414 予鋼プ.flac",
-            "Creations/UFO.m4a",
+            "Creations/2414.flac",
+            "Creations/ufo.m4a",
             "Creations/People are People.flac",
             "Creations/Electric.flac",
             "Creations/Joyride.flac",
             "Creations/Reflection.flac",
             "Creations/rainy nights.m4a",
-            "Creations/Lonely Memories.flac",
+            "Creations/lonely memories.flac",
             "Creations/Empty Room.flac",
             "Creations/The Last Goodbye.flac",
             "Creations/Between Heaven and Hell.flac",
