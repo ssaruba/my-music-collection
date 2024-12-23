@@ -25,7 +25,6 @@
         .title {
             font-size: 2.5em;
             font-weight: bold;
-            text-shadow: 1px 1px 4px #ffffff;
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
@@ -98,6 +97,8 @@
         img[alt="Dancing Note"], .melting-cd {
             border: none; /* Removes border for GIFs */
             box-shadow: none; /* Removes shadow for GIFs */
+            width: 100px; /* Adjust the size as needed */
+            height: auto; /* Maintain aspect ratio */
         }
 
         /* Sparkle Effect */
@@ -125,11 +126,15 @@
                 transform: scale(1.5);
             }
         }
+
+        button, h2, img, audio {
+        margin-bottom: 15px; /* Adds 15px space below these elements */
+        }
     </style>
 </head>
 <body>
     <!-- Scrolling Text with Comic Sans -->
-    <marquee class="comic-sans" scrollamount="6">Welcome to Samuel's Sound Vault! 🎵 Relive the early 2000s vibes! ✨</marquee>
+    <marquee class="comic-sans" scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
 
     <!-- Title with Comic Sans -->
     <div class="title">
