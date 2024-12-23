@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Music</title>
+    <title>Samuel's Sound Vault</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f9;
+            background-color: #d3d3d3; /* Light grey background */
+            color: #333333; /* Dark grey text for contrast */
         }
         h1, h2 {
             font-weight: bold;
@@ -47,11 +48,63 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(100vh); }
         }
+
+        /* Marquee */
+        marquee {
+            font-size: 1.2em;
+            color: #333333;
+            margin: 10px 0;
+        }
+        /* Pixel Divider */
+        .pixel-divider {
+            height: 10px;
+            background: repeating-linear-gradient(
+                45deg,
+                #333333,
+                #333333 5px,
+                #d3d3d3 5px,
+                #d3d3d3 10px
+            );
+            margin: 20px 0;
+        }
+        /* Blinking Text */
+        .blink {
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { visibility: hidden; }
+        }
+        /* Floating Melting CD */
+        .melting-cd {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            z-index: 1000;
+            animation: spin 5s linear infinite;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     </style>
 </head>
 <body>
-    <h1>My Music</h1>
-    <p>Fröhliche Weihnachten Papa! Hier findest du eine Sammlung von meiner Musik, die du direkt über PC oder dein Handy abspielen kannst!</p>
+
+    <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
+    <h1>Samuel's Sound Vault</h1>
+    <img src="meltingCD.gif" alt="Melting CD" class="melting-cd">
+    <p class="blink">Fröhliche Weihnachten Papa! 🎄</p>
+
+    <!-- Pixel Divider -->
+    <div class="pixel-divider"></div>
+
+    <h1>Samuel's Sound Vault</h1>
 
     <!-- Christmas Bonus Album -->
     <div class="bonus album">
@@ -133,7 +186,7 @@
             <option value="12">Comeback Kid (SelfWave Remix)</option>
             <option value="13">Midnight Escape</option>
             <option value="14">Stay With Me</option>
-            <option value="15">It Follows</option>
+            <option value="15">It Follows (Bonus Track)</option>
             <option value="16">DX Dreams (Bonus Track)</option>
             <option value="17">Disco Queen (Bonus Track)</option>
             <option value="18">Gloria (Bonus Track)</option>
@@ -224,6 +277,15 @@
         
     </div>
 
+    <!-- Pixel Divider -->
+    <div class="pixel-divider"></div>
+
+    <!-- Visitor Counter Placeholder -->
+    <div>
+        <p>You're visitor number:</p>
+        <img src="https://hitwebcounter.com/counter/counter.php?page=123456&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="Visitor Counter">
+    </div>
+
     <p>More coming soon... My biggest album yet: <strong>Destroy & Create</strong> - 5 years in the making</p>
 
     <script>
@@ -274,7 +336,7 @@
             "Electric Emotions/Comeback Kid (SelfWave Remix).mp3",
             "Electric Emotions/Midnight Escape.mp3",
             "Electric Emotions/Stay with me.mp3",
-            "Electric Emotions/It Follows.mp3",
+            "Electric Emotions/it follows.mp3",
             "Electric Emotions/DX Dreams.mp3",
             "Electric Emotions/Disco Queen.mp3",
             "Electric Emotions/Gloria.mp3",
@@ -326,7 +388,7 @@
             "Untitled/LIFE.mp3",
             "Untitled/magic.mp3",
             "Untitled/ramune.mp3",
-            "Untitled/Sea-of-Static.mp3",
+            "Untitled/Sea-of-Static_.mp3",
             "Untitled/SPIDER.mp3",
             "Untitled/The Machine Is Alive.mp3",
             "Untitled/virtual echo.mp3",
@@ -344,30 +406,31 @@
         id: "creations",
         tracks: [
             "Creations/Pale Blue Dot (Intro).flac",
-            "Creations/Sunset Drive.flac",
-            "Creations/Synthetic Kiss.flac",
-            "Creations/Mariowave.flac",
-            "Creations/Mother Machine.flac",
-            "Creations/People are People.flac",
-            "Creations/Reflection.flac",
-            "Creations/Empty Room.flac",
-            "Creations/Falling.flac",
-            "Creations/Mall Dreams.flac",
-            "Creations/Warm Sunbeams.flac",
-            "Creations/T-800.mp3",
-            "Creations/2414 予鋼プ.flac",
-            "Creations/Electric.flac",
-            "Creations/rainy nights.m4a",
-            "Creations/The Last Goodbye.flac",
             "Creations/Wave.flac",
+            "Creations/Sunset Drive.flac",
+            "Creations/Mall Dreams.flac",
             "Creations/Synthracing.flac",
+            "Creations/Synthetic Kiss.flac",
+            "Creations/Warm Sunbeams.flac",
             "Creations/Nostalgia.flac",
+            "Creations/Mariowave.flac",
+            "Creations/T-800.mp3",
             "Creations/HAL 9000.flac",
+            "Creations/Mother Machine.flac",
+            "Creations/2414 予鋼プ.flac",
             "Creations/UFO.m4a",
+            "Creations/People are People.flac",
+            "Creations/Electric.flac",
             "Creations/Joyride.flac",
+            "Creations/Reflection.flac",
+            "Creations/rainy nights.m4a",
             "Creations/Lonely Memories.flac",
+            "Creations/Empty Room.flac",
+            "Creations/The Last Goodbye.flac",
             "Creations/Between Heaven and Hell.flac",
+            "Creations/Falling.flac",
         ],
+
         currentTrack: 0,
         audioPlayer: document.getElementById("creations-audio-player"),
         trackList: document.getElementById("creations-track-list"),
