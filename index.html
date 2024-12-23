@@ -11,7 +11,7 @@
             margin: 0;
             text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #fbd2e7, #fde7f6, #e7f4fb);
+            background: linear-gradient(135deg, #ff9ace, #fde7f6, #a1deff);
             color: #333333;
             overflow-x: hidden;
         }
@@ -30,9 +30,9 @@
 
         /* Marquee Styling */
         marquee {
-            font-family: "Impact", sans-serif; /* Early 2000s font */
+            font-family: "Impact"; /* Early 2000s font */
             font-size: 1.2em;
-            color: #0070cb;
+            color: #000000;
             font-weight: bold;
             text-shadow: 1px 1px 2px black;
             margin: 10px 0;
@@ -106,12 +106,66 @@
         }
 
         button, h2, img, audio {
-        margin-bottom: 20px; /* Adds 15px space below these elements */
+        margin-bottom: 10px; /* Adds 15px space below these elements */
         }
         select, .controls {
-            margin-top: 20px; /* Adjust the value as needed */
-            margin-bottom: 20px; /* Adds space between controls and the next section */
+            margin-bottom: 30px; /* Adds space between controls and the next section */
         }
+
+        @media (max-width: 768px) {
+    /* Adjust body padding */
+    body {
+        padding: 10px;
+    }
+
+    /* Title */
+    .title {
+        font-size: 2em; /* Smaller font size for smaller screens */
+    }
+
+    /* Marquee */
+    marquee {
+        font-size: 1em; /* Reduce font size for marquee */
+        padding: 5px;
+    }
+
+    /* Images (Album Covers) */
+    img {
+        max-width: 100%; /* Images take up full width */
+        max-height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Buttons and Controls */
+    button, select, audio {
+        width: 100%; /* Stretch to full width */
+        font-size: 1em; /* Adjust font size */
+        margin-bottom: 10px; /* Reduce spacing */
+    }
+
+    /* Pixel Divider */
+    .pixel-divider {
+        margin-bottom: 20px; /* Reduce spacing */
+    }
+
+    /* YouTube Link */
+    a {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        padding: 5px 10px; /* Adjust padding */
+    }
+
+    /* Melting CD */
+    .melting-cd {
+        bottom: 20px;
+        right: 20px;
+        width: 80px; /* Smaller size for phones */
+    }
+
+    /* Album Titles */
+    h2 {
+        font-size: 1.5em; /* Smaller titles */
+    }
+}
+
 
     </style>
 </head>
@@ -131,17 +185,17 @@
                 font-family: 'Verdana', sans-serif;
                 font-size: 1.2em;
                 font-weight: bold;
-                color: #ff6600;
+                color: #ffffff;
                 text-decoration: none;
-                background: linear-gradient(90deg, #ff9900, #ff6600);
+                background: linear-gradient(90deg, #ff2c2c, #ff7070);
                 padding: 10px 15px;
-                border: 2px solid #ff6600;
+                border: 2px solid #ff2c2c;
                 border-radius: 10px;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
                 text-shadow: 1px 1px 2px black;
                 display: inline-block;
             ">
-        Visit my YouTube Channel! 🎥
+        Visit my YouTube Channel!
     </a>
 </p>
 
@@ -190,7 +244,7 @@
     <div class="album">
         <h2>Tree (New)</h2>
         <div id="current-tree-song">Currently playing: purple tree</div>
-        <img src="Tree/TREE - COVER.png" alt="Tree Album Cover">
+        <img src="Tree/TREE - COVER.jpg" alt="Tree Album Cover">
         <audio id="tree-audio-player" controls></audio>
         <div class="controls">
             <button id="tree-prev-btn">⏮ Previous</button>
@@ -216,8 +270,9 @@
         </div>
         <select id="pc-track-list">
             <option value="0">PC</option>
-            <option value="1">Q</option>
-            <option value="2">XP</option>
+            <option value="1">EY</option>
+            <option value="2">QA</option>
+            <option value="3">XP</option>
         </select>
     </div>
 
