@@ -23,7 +23,7 @@
 
         /* Title Styling */
         .title {
-            font-size: 2.5em;
+            font-size: 3em;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -64,9 +64,9 @@
         }
 
         .pixel-divider {
-            height: 1px;
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            margin: 2px 0;
+            height: 3px;
+            background-color: #000000;
+            margin: 3px 0;
         }
 
         /* Melting CD */
@@ -95,6 +95,11 @@
                 transform: translateY(100vh);
             }
         }
+
+        button, h2, img, audio {
+        margin-bottom: 15px; /* Adds 15px space below these elements */
+}
+
     </style>
 </head>
 <body>
@@ -111,10 +116,10 @@
     <div class="pixel-divider"></div>
 
     <!-- Christmas Bonus Album -->
-    <div class="bonus album">
+    <div class="album">
         <h2>Christmas</h2>
-        <img src="Christmas/CHRISTMAS - COVER.jpg" alt="Christmas Album Cover">
         <div id="current-christmas-song">Currently playing: Merry Christmas</div>
+        <img src="Christmas/CHRISTMAS - COVER.jpg" alt="Christmas Album Cover">
         <audio id="christmas-audio-player" controls></audio>
         <div class="controls">
             <button id="christmas-prev-btn">⏮ Previous</button>
