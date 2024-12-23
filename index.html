@@ -31,6 +31,11 @@
             margin: 10px auto;
             display: block;
         }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
         .snowflake {
             color: #ffffff;
             font-size: 1.5em;
@@ -52,9 +57,12 @@
     <div class="bonus album">
         <h2>Christmas</h2>
         <img src="Christmas/CHRISTMAS - COVER.jpg" alt="Christmas Album Cover">
-        <audio id="christmas-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
+        <div id="current-christmas-song">Currently playing: Merry Christmas</div>
+        <audio id="christmas-audio-player" controls></audio>
+        <div class="controls">
+            <button id="christmas-prev-btn">⏮ Previous</button>
+            <button id="christmas-next-btn">⏭ Next</button>
+        </div>
         <select id="christmas-track-list">
             <option value="0">Merry Christmas</option>
             <option value="1">Canon in D Major - Remix</option>
@@ -64,12 +72,13 @@
     <!-- Album 1 -->
     <div class="album">
         <h2>HOME IS WHERE THE DUST IS</h2>
-        <div id="current-home-song">Currently playing: </div>
-        <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
-             alt="HOME IS WHERE THE DUST IS - Album Cover">
-        <audio id="home-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
+        <div id="current-home-song">Currently playing: I DON'T WANNA RUIN IT</div>
+        <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" alt="HOME IS WHERE THE DUST IS - Album Cover">
+        <audio id="home-audio-player" controls></audio>
+        <div class="controls">
+            <button id="home-prev-btn">⏮ Previous</button>
+            <button id="home-next-btn">⏭ Next</button>
+        </div>
         <select id="home-track-list">
             <option value="0">I DON'T WANNA RUIN IT</option>
             <option value="1">EVERYTHING I AM</option>
@@ -80,14 +89,16 @@
         </select>
     </div>
 
-    <!-- Album 2 -->
+    <!-- Other Albums (Example: Electric Emotions) -->
     <div class="album">
         <h2>Electric Emotions</h2>
-        <div id="current-electric-song">Currently playing: </div>
+        <div id="current-electric-song">Currently playing: Diva Dreams (Intro)</div>
         <img src="Electric Emotions/ELECTRIC EMOTIONS - COVER.png" alt="Electric Emotions Album Cover">
-        <audio id="electric-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
+        <audio id="electric-audio-player" controls></audio>
+        <div class="controls">
+            <button id="electric-prev-btn">⏮ Previous</button>
+            <button id="electric-next-btn">⏭ Next</button>
+        </div>
         <select id="electric-track-list">
             <option value="0">Diva Dreams (Intro)</option>
             <option value="1">Epiphany</option>
@@ -110,216 +121,101 @@
         </select>
     </div>
 
-    <!-- Additional Albums -->
-    <div class="album">
-        <h2>Cute Little World</h2>
-        <div id="current-cute-song">Currently playing: </div>
-        <img src="cute little world/CUTE LITTLE WORLD - COVER.png" alt="Cute Little World Album Cover">
-        <audio id="cute-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <select id="cute-track-list">
-            <option value="0">Cute Little World</option>
-            <option value="1">Our Planet</option>
-        </select>
-    </div>
-
-    <div class="album">
-        <h2>PC</h2>
-        <div id="current-pc-song">Currently playing: </div>
-        <img src="PC/PC - COVER.png" alt="PC Album Cover">
-        <audio id="pc-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <select id="pc-track-list">
-            <option value="0">PC</option>
-            <option value="1">Control</option>
-            <option value="2">Bloodbath</option>
-            <option value="3">The Gear Machine</option>
-            <option value="4">XP</option>
-        </select>
-    </div>
-
-    <div class="album">
-        <h2>Untitled</h2>
-        <div id="current-untitled-song">Currently playing: </div>
-        <img src="Untitled/UNTITLED - COVER.jpg" alt="Untitled Album Cover">
-        <audio id="untitled-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <select id="untitled-track-list">
-            <option value="0">Afterlife</option>
-            <option value="1">Another Earth</option>
-            <option value="2">Spider</option>
-            <option value="3">Wrapped in Anansi's Web</option>
-        </select>
-    </div>
-
-    <!-- New Album: Creations -->
-    <div class="album">
-        <h2>Creations</h2>
-        <div id="current-creations-song">Currently playing: </div>
-        <img src="Creations/CREATIONS - COVER.jpg" alt="Creations Album Cover">
-        <audio id="creations-audio-player" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <select id="creations-track-list">
-            <option value="0">Pale Blue Dot (Intro)</option>
-            <option value="1">Sunset Drive</option>
-            <option value="2">Synthetic Kiss</option>
-            <option value="3">Mariowave</option>
-            <option value="4">Mother Machine</option>
-            <option value="5">People are People</option>
-            <option value="6">Reflection</option>
-            <option value="7">Empty Room</option>
-            <option value="8">Falling</option>
-            <option value="9">Mall Dreams</option>
-            <option value="10">Warm Sunbeams</option>
-            <option value="11">T-800</option>
-            <option value="12">2414 予鋼プ</option>
-            <option value="13">Electric</option>
-            <option value="14">Rainy Nights</option>
-            <option value="15">The Last Goodbye</option>
-            <option value="16">Wave</option>
-            <option value="17">Synthracing</option>
-            <option value="18">Nostalgia</option>
-            <option value="19">HAL 9000</option>
-            <option value="20">UFO</option>
-            <option value="21">Joyride</option>
-            <option value="22">Lonely Memories</option>
-            <option value="23">Between Heaven and Hell</option>
-        </select>
-    </div>
-
     <p>Vielen Dank, dass du vorbeischaust! Musik ist immer besser, wenn sie geteilt wird. 🎵</p>
 
     <script>
-        // Updated paths for correctness
-        const christmasTracks = [
-            "Christmas/merry christmas.mp3",
-            "Christmas/canon in d major - remix.mp3"
+        const albums = [
+            {
+                id: "christmas",
+                tracks: ["Christmas/merry christmas.mp3", "Christmas/canon in d major - remix.mp3"],
+                currentTrack: 0,
+                audioPlayer: document.getElementById("christmas-audio-player"),
+                trackList: document.getElementById("christmas-track-list"),
+                currentSongDisplay: document.getElementById("current-christmas-song"),
+                prevBtn: document.getElementById("christmas-prev-btn"),
+                nextBtn: document.getElementById("christmas-next-btn"),
+            },
+            {
+                id: "home",
+                tracks: [
+                    "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
+                    "HOME IS WHERE THE DUST IS/everything i am.mp3",
+                    "HOME IS WHERE THE DUST IS/purple tree.mp3",
+                    "HOME IS WHERE THE DUST IS/friends.mp3",
+                    "HOME IS WHERE THE DUST IS/jock.mp3",
+                    "HOME IS WHERE THE DUST IS/human emotional experience.mp3",
+                ],
+                currentTrack: 0,
+                audioPlayer: document.getElementById("home-audio-player"),
+                trackList: document.getElementById("home-track-list"),
+                currentSongDisplay: document.getElementById("current-home-song"),
+                prevBtn: document.getElementById("home-prev-btn"),
+                nextBtn: document.getElementById("home-next-btn"),
+            },
+            // Add other albums here (e.g., Electric Emotions)
         ];
 
-        const homeTracks = [
-            "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
-            "HOME IS WHERE THE DUST IS/everything i am.mp3",
-            "HOME IS WHERE THE DUST IS/purple tree.mp3",
-            "HOME IS WHERE THE DUST IS/friends.mp3",
-            "HOME IS WHERE THE DUST IS/jock.mp3",
-            "HOME IS WHERE THE DUST IS/human emotional experience.mp3"
-        ];
+        let currentPlayingAlbum = null;
 
-        const electricTracks = [
-            "Electric Emotions/Diva Dreams (Intro).mp3",
-            "Electric Emotions/Epiphany.mp3",
-            "Electric Emotions/One Day A Computer Will Fit In Our Brain.mp3",
-            "Electric Emotions/Electro Boy.mp3",
-            "Electric Emotions/Kids 3.mp3",
-            "Electric Emotions/Hawkins.mp3",
-            "Electric Emotions/Don't Forget About Me.mp3",
-            "Electric Emotions/Neon Tears (Intermission).mp3",
-            "Electric Emotions/198x.mp3",
-            "Electric Emotions/Policy Of Truth (SelfWave Remix).mp3",
-            "Electric Emotions/011.mp3",
-            "Electric Emotions/Rewind.mp3",
-            "Electric Emotions/Comeback Kid (SelfWave Remix).mp3",
-            "Electric Emotions/Midnight Escape.mp3",
-            "Electric Emotions/Stay With Me.mp3",
-            "Electric Emotions/DX Dreams (Bonus Track).mp3",
-            "Electric Emotions/Disco Queen (Bonus Track).mp3",
-            "Electric Emotions/Gloria (Bonus Track).mp3"
-        ];
-
-        const cuteTracks = [
-            "cute little world/cute little world.mp3",
-            "cute little world/Our Planet.mp3"
-        ];
-
-        const pcTracks = [
-            "PC/PC.mp3",
-            "PC/Control.mp3",
-            "PC/Bloodbath.mp3",
-            "PC/The-Gear-Machine.mp3",
-            "PC/XP.mp3"
-        ];
-
-        const untitledTracks = [
-            "Untitled/Afterlife.mp3",
-            "Untitled/Another Earth.mp3",
-            "Untitled/SPIDER.mp3",
-            "Untitled/Wrapped in Anansi's Web.mp3"
-        ];
-
-        const creationsTracks = [
-            "Creations/Pale Blue Dot (Intro).flac",
-            "Creations/Sunset Drive.flac",
-            "Creations/Synthetic Kiss.flac",
-            "Creations/Mariowave.flac",
-            "Creations/Mother Machine.flac",
-            "Creations/People are People.flac",
-            "Creations/Reflection.flac",
-            "Creations/Empty Room.flac",
-            "Creations/Falling.flac",
-            "Creations/Mall Dreams.flac",
-            "Creations/Warm Sunbeams.flac",
-            "Creations/T-800.mp3",
-            "Creations/2414 予鋼プ.flac",
-            "Creations/Electric.flac",
-            "Creations/rainy nights.m4a",
-            "Creations/The Last Goodbye.flac",
-            "Creations/Wave.flac",
-            "Creations/Synthracing.flac",
-            "Creations/Nostalgia.flac",
-            "Creations/HAL 9000.flac",
-            "Creations/UFO.m4a",
-            "Creations/Joyride.flac",
-            "Creations/Lonely Memories.flac",
-            "Creations/Between Heaven and Hell.flac"
-        ];
-
-        function updatePlayer(audioPlayer, trackList, tracks) {
-            trackList.addEventListener("change", (e) => {
-                const trackIndex = parseInt(e.target.value);
-                audioPlayer.src = tracks[trackIndex];
-                audioPlayer.play();
+        function pauseOtherPlayers(exceptAlbum) {
+            albums.forEach((album) => {
+                if (album !== exceptAlbum) {
+                    album.audioPlayer.pause();
+                }
             });
         }
 
-        updatePlayer(document.getElementById("christmas-audio-player"), document.getElementById("christmas-track-list"), christmasTracks);
-        updatePlayer(document.getElementById("home-audio-player"), document.getElementById("home-track-list"), homeTracks);
-        updatePlayer(document.getElementById("electric-audio-player"), document.getElementById("electric-track-list"), electricTracks);
-        updatePlayer(document.getElementById("cute-audio-player"), document.getElementById("cute-track-list"), cuteTracks);
-        updatePlayer(document.getElementById("pc-audio-player"), document.getElementById("pc-track-list"), pcTracks);
-        updatePlayer(document.getElementById("untitled-audio-player"), document.getElementById("untitled-track-list"), untitledTracks);
-        updatePlayer(document.getElementById("creations-audio-player"), document.getElementById("creations-track-list"), creationsTracks);
-
-        // Snow effect for Christmas songs
-        let snowflakeInterval;
-        const christmasAudioPlayer = document.getElementById("christmas-audio-player");
-
-        function createSnowflake() {
-            const snowflake = document.createElement("div");
-            snowflake.className = "snowflake";
-            snowflake.style.left = Math.random() * 100 + "%";
-            snowflake.textContent = "❄";
-            document.body.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 5000);
+        function updateCurrentSong(album) {
+            album.currentSongDisplay.textContent =
+                "Currently playing: " +
+                album.trackList.options[album.currentTrack].textContent;
         }
 
-        function startSnowEffect() {
-            if (!snowflakeInterval) {
-                snowflakeInterval = setInterval(createSnowflake, 200);
-            }
+        function playNextTrack(album) {
+            album.currentTrack = (album.currentTrack + 1) % album.tracks.length;
+            album.audioPlayer.src = album.tracks[album.currentTrack];
+            album.audioPlayer.play();
+            updateCurrentSong(album);
+            album.trackList.selectedIndex = album.currentTrack;
         }
 
-        function stopSnowEffect() {
-            clearInterval(snowflakeInterval);
-            snowflakeInterval = null;
+        function playPreviousTrack(album) {
+            album.currentTrack =
+                (album.currentTrack - 1 + album.tracks.length) % album.tracks.length;
+            album.audioPlayer.src = album.tracks[album.currentTrack];
+            album.audioPlayer.play();
+            updateCurrentSong(album);
+            album.trackList.selectedIndex = album.currentTrack;
         }
 
-        christmasAudioPlayer.addEventListener("play", startSnowEffect);
-        christmasAudioPlayer.addEventListener("pause", stopSnowEffect);
-        christmasAudioPlayer.addEventListener("ended", stopSnowEffect);
+        albums.forEach((album) => {
+            album.audioPlayer.src = album.tracks[album.currentTrack];
+            updateCurrentSong(album);
+
+            album.audioPlayer.addEventListener("play", () => {
+                pauseOtherPlayers(album);
+                currentPlayingAlbum = album;
+            });
+
+            album.audioPlayer.addEventListener("ended", () => {
+                playNextTrack(album);
+            });
+
+            album.trackList.addEventListener("change", () => {
+                album.currentTrack = album.trackList.selectedIndex;
+                album.audioPlayer.src = album.tracks[album.currentTrack];
+                album.audioPlayer.play();
+                updateCurrentSong(album);
+            });
+
+            album.prevBtn.addEventListener("click", () => {
+                playPreviousTrack(album);
+            });
+
+            album.nextBtn.addEventListener("click", () => {
+                playNextTrack(album);
+            });
+        });
     </script>
 </body>
 </html>
