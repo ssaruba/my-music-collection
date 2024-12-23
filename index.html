@@ -5,126 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel's Sound Vault</title>
     <style>
+        /* Gradient Background */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
             margin: 0;
+            text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #ffcc00, #ff6699, #6600cc); /* Gradient background */
-            color: #333333; /* Dark grey text for contrast */
+            background: linear-gradient(135deg, #ff66cc, #ffccff, #66ccff);
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        h1, marquee {
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans for the title and marquee */
-            color: #fff; /* White color for better contrast */
-        }
-        h1 {
+
+        /* Animated Title with GIF */
+        .title {
             font-size: 2.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px; /* Space between the title and the GIFs */
-        }
-        .note {
-            width: 50px; /* Small size for the GIF */
-        }
-        h2 {
             font-weight: bold;
+            text-shadow: 2px 2px 8px #ff69b4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        .bonus {
-            font-size: 0.9em;
+
+        .title img {
+            height: 50px;
         }
-        .album {
-            margin: 40px auto;
-            max-width: 600px;
+
+        /* Neon Buttons */
+        button {
+            font-family: inherit;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #ff1493, #ff6347);
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px #ff1493;
+            transition: transform 0.2s;
         }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px #ff69b4;
+        }
+
+        /* Marquee */
+        marquee {
+            font-size: 1.2em;
+            color: #ffff00;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black;
+            margin: 10px 0;
+        }
+
+        /* Borders for Album Covers */
         img {
-            max-width: 300px;
+            border: 8px double #ff69b4;
+            border-radius: 10px;
             margin: 20px auto;
             display: block;
         }
-        audio, button, select {
-            margin: 10px auto;
-            display: block;
-        }
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        button {
-            background-color: #6600cc; /* Retro purple */
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #ff6699; /* Hover effect */
-        }
+
         /* Pixel Divider */
         .pixel-divider {
-            height: 15px;
+            height: 10px;
             background: repeating-linear-gradient(
-                90deg,
-                #ffcc00,
-                #ffcc00 10px,
-                #ff6699 10px,
-                #ff6699 20px
+                45deg,
+                #ff1493,
+                #ff1493 5px,
+                #66ccff 5px,
+                #66ccff 10px
             );
             margin: 20px 0;
         }
-        /* Blinking Text */
-        .blink {
-            animation: blink 1s step-start infinite;
-        }
-        @keyframes blink {
-            50% { visibility: hidden; }
-        }
-        /* Sparkle Effect */
-        .sparkle {
+
+        /* Starry Background Effect */
+        .star {
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background: radial-gradient(circle, #fff 50%, rgba(255, 255, 255, 0) 100%);
+            width: 3px;
+            height: 3px;
+            background: white;
             border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 2s ease-out infinite;
+            animation: twinkle 5s infinite;
         }
-        @keyframes sparkle {
-            0% {
+
+        @keyframes twinkle {
+            0%, 100% {
                 opacity: 0;
-                transform: scale(0.5);
             }
             50% {
                 opacity: 1;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.5);
             }
         }
+
         /* Melting CD */
         .melting-cd {
             position: fixed;
             bottom: 10px;
             right: 10px;
-            width: 100px;
+            width: 80px;
             z-index: 1000;
+        }
+
+        /* Blinking Text */
+        .blink {
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                visibility: hidden;
+            }
         }
     </style>
 </head>
 <body>
-    <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
-    <h1>Samuel's Sound Vault</h1>
-    <img src="dancingNote.gif" alt="Dancing Note" class="dancing-note">
-    <p class="blink">Fröhliche Weihnachten Papa! 🎄</p>
+
+    <!-- Marquee -->
+    <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵 Relive the early 2000s vibes! ✨</marquee>
+
+    <!-- Animated Title -->
+    <div class="title">
+        <img src="dancingNote.gif" alt="Dancing Note">
+        Samuel's Sound Vault
+        <img src="dancingNote.gif" alt="Dancing Note">
+    </div>
 
     <!-- Pixel Divider -->
     <div class="pixel-divider"></div>
 
-    <h1>Samuel's Sound Vault</h1>
+    <!-- Blinking Text -->
+    <p class="blink">Fröhliche Weihnachten Papa! 🎄</p>
 
     <!-- Christmas Bonus Album -->
     <div class="bonus album">
@@ -306,7 +320,11 @@
         <img src="https://hitwebcounter.com/counter/counter.php?page=123456&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" alt="Visitor Counter">
     </div>
 
+     <!-- Melting CD -->
+     <img src="meltingCD.gif" alt="Melting CD" class="melting-cd">
+
     <p>More coming soon... My biggest album yet: <strong>Destroy & Create</strong> - 5 years in the making</p>
+
 
     <script>
         const albums = [
