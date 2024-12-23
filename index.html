@@ -73,11 +73,14 @@
 
         /* Borders for Album Covers */
         img {
-            border: 8px double #ff69b4;
-            border-radius: 10px;
+            max-width: 300px;
+            max-height: 300px; /* Ensures the images don't exceed 300px in height */
             margin: 20px auto;
             display: block;
-        }
+            border: 4px solid #fff; /* Adds a border for aesthetics */
+            box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.6); /* Glowing border effect */
+            border-radius: 8px; /* Adds a slight rounding to the corners */
+}
 
         /* Pixel Divider */
         .pixel-divider {
@@ -125,7 +128,7 @@
 </head>
 <body>
     <!-- Marquee -->
-    <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵 Relive the early 2000s vibes! ✨</marquee>
+    <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵 ✨</marquee>
 
     <!-- Animated Title -->
     <div class="title">
