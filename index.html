@@ -31,7 +31,7 @@
         /* Marquee Styling */
         marquee {
             font-size: 1.2em;
-            color: #ff69b4;
+            color: #a0a0a0;
             font-weight: bold;
             text-shadow: 1px 1px 2px black;
             margin: 10px 0;
@@ -77,11 +77,7 @@
             right: 10px;
             width: 100px;
             z-index: 1000;
-            border: none;
-        }
-
-        .melting-cd {
-            border: none;
+            border: none !important; /* Override any other styles */
         }
 
         /* Snowflake Styles */
@@ -104,7 +100,14 @@
 
         button, h2, img, audio {
         margin-bottom: 15px; /* Adds 15px space below these elements */
-}
+        }
+        select, .controls {
+            margin-top: 20px; /* Adjust the value as needed */
+        }
+
+        .melting-cd {
+            border: none;
+        }
 
     </style>
 </head>
