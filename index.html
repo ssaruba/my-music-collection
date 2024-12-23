@@ -71,7 +71,7 @@
 
     <!-- Home Album -->
     <div class="album">
-        <h2>HOME IS WHERE THE DUST IS</h2>
+        <h2>HOME IS WHERE THE DUST IS (NEW)</h2>
         <div id="current-home-song">Currently playing: I DON'T WANNA RUIN IT</div>
         <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" alt="HOME IS WHERE THE DUST IS - Album Cover">
         <audio id="home-audio-player" controls></audio>
@@ -81,11 +81,29 @@
         </div>
         <select id="home-track-list">
             <option value="0">I DON'T WANNA RUIN IT</option>
-            <option value="1">EVERYTHING I AM</option>
-            <option value="2">PURPLE TREE</option>
-            <option value="3">FRIENDS</option>
-            <option value="4">JOCK</option>
-            <option value="5">HUMAN EMOTIONAL EXPERIENCE</option>
+            <option value="1">93</option>
+            <option value="2">EVERYTHING I AM</option>
+            <option value="3">PURPLE TREE</option>
+            <option value="4">FRIENDS</option>
+            <option value="5">JOCK</option>
+            <option value="6">HUMAN EMOTIONAL EXPERIENCE</option>
+        </select>
+    </div>
+
+        <!-- PC Album -->
+    <div class="album">
+        <h2>PC (NEW)</h2>
+        <div id="current-pc-song">Currently playing: PC</div>
+        <img src="PC/PC - COVER.png" alt="PC Album Cover">
+        <audio id="pc-audio-player" controls></audio>
+        <div class="controls">
+            <button id="pc-prev-btn">⏮ Previous</button>
+            <button id="pc-next-btn">⏭ Next</button>
+        </div>
+        <select id="pc-track-list">
+            <option value="0">PC</option>
+            <option value="1">Q</option>
+            <option value="2">XP</option>
         </select>
     </div>
 
@@ -115,15 +133,16 @@
             <option value="12">Comeback Kid (SelfWave Remix)</option>
             <option value="13">Midnight Escape</option>
             <option value="14">Stay With Me</option>
-            <option value="15">DX Dreams (Bonus Track)</option>
-            <option value="16">Disco Queen (Bonus Track)</option>
-            <option value="17">Gloria (Bonus Track)</option>
+            <option value="15">It Follows</option>
+            <option value="16">DX Dreams (Bonus Track)</option>
+            <option value="17">Disco Queen (Bonus Track)</option>
+            <option value="18">Gloria (Bonus Track)</option>
         </select>
     </div>
 
     <!-- Cute Little World Album -->
     <div class="album">
-        <h2>Cute Little World</h2>
+        <h2>cute little world</h2>
         <div id="current-cute-song">Currently playing: Cute Little World</div>
         <img src="cute little world/CUTE LITTLE WORLD - COVER.png" alt="Cute Little World Album Cover">
         <audio id="cute-audio-player" controls></audio>
@@ -134,43 +153,6 @@
         <select id="cute-track-list">
             <option value="0">Cute Little World</option>
             <option value="1">Our Planet</option>
-        </select>
-    </div>
-
-    <!-- PC Album -->
-    <div class="album">
-        <h2>PC</h2>
-        <div id="current-pc-song">Currently playing: PC</div>
-        <img src="PC/PC - COVER.png" alt="PC Album Cover">
-        <audio id="pc-audio-player" controls></audio>
-        <div class="controls">
-            <button id="pc-prev-btn">⏮ Previous</button>
-            <button id="pc-next-btn">⏭ Next</button>
-        </div>
-        <select id="pc-track-list">
-            <option value="0">PC</option>
-            <option value="1">Control</option>
-            <option value="2">Bloodbath</option>
-            <option value="3">The Gear Machine</option>
-            <option value="4">XP</option>
-        </select>
-    </div>
-
-    <!-- Untitled Album -->
-    <div class="album">
-        <h2>Untitled</h2>
-        <div id="current-untitled-song">Currently playing: Afterlife</div>
-        <img src="Untitled/UNTITLED - COVER.jpg" alt="Untitled Album Cover">
-        <audio id="untitled-audio-player" controls></audio>
-        <div class="controls">
-            <button id="untitled-prev-btn">⏮ Previous</button>
-            <button id="untitled-next-btn">⏭ Next</button>
-        </div>
-        <select id="untitled-track-list">
-            <option value="0">Afterlife</option>
-            <option value="1">Another Earth</option>
-            <option value="2">Spider</option>
-            <option value="3">Wrapped in Anansi's Web</option>
         </select>
     </div>
 
@@ -186,39 +168,69 @@
         </div>
         <select id="creations-track-list">
             <option value="0">Pale Blue Dot (Intro)</option>
-            <option value="1">Sunset Drive</option>
-            <option value="2">Synthetic Kiss</option>
-            <option value="3">Mariowave</option>
-            <option value="4">Mother Machine</option>
-            <option value="5">People are People</option>
-            <option value="6">Reflection</option>
-            <option value="7">Empty Room</option>
-            <option value="8">Falling</option>
-            <option value="9">Mall Dreams</option>
-            <option value="10">Warm Sunbeams</option>
-            <option value="11">T-800</option>
+            <option value="1">Wave</option>
+            <option value="2">Sunset Drive</option>
+            <option value="3">Mall Dreams</option>
+            <option value="4">Synthracing</option>
+            <option value="5">Synthetic Kiss</option>
+            <option value="6">Warm Sunbeams</option>
+            <option value="7">Nostalgia</option>
+            <option value="8">Mariowave</option>
+            <option value="9">T-800</option>
+            <option value="10">HAL-9000</option>
+            <option value="11">Mother Machine</option>
             <option value="12">2414 予鋼プ</option>
-            <option value="13">Electric</option>
-            <option value="14">Rainy Nights</option>
-            <option value="15">The Last Goodbye</option>
-            <option value="16">Wave</option>
-            <option value="17">Synthracing</option>
-            <option value="18">Nostalgia</option>
-            <option value="19">HAL 9000</option>
-            <option value="20">UFO</option>
-            <option value="21">Joyride</option>
-            <option value="22">Lonely Memories</option>
-            <option value="23">Between Heaven and Hell</option>
+            <option value="13">ufo</option>
+            <option value="14">People are People</option>
+            <option value="15">Electric</option>
+            <option value="16">Joyride</option>
+            <option value="17">Reflection</option>
+            <option value="18">rainy nights</option>
+            <option value="19">lonely memories</option>
+            <option value="20">Empty Room</option>
+            <option value="21">The Last Goodbye</option>
+            <option value="22">Between Heaven and Hell</option>
+            <option value="23">Falling</option>
         </select>
     </div>
 
-    <p>Vielen Dank, dass du vorbeischaust! Musik ist immer besser, wenn sie geteilt wird. 🎵</p>
+    <!-- Untitled Album -->
+    <div class="album">
+        <h2>Leftovers (Growing Collection) (OLD + NEW)</h2>
+        <div id="current-untitled-song">Currently playing: Afterlife</div>
+        <img src="Untitled/UNTITLED - COVER.jpg" alt="Untitled Album Cover">
+        <audio id="untitled-audio-player" controls></audio>
+        <div class="controls">
+            <button id="untitled-prev-btn">⏮ Previous</button>
+            <button id="untitled-next-btn">⏭ Next</button>
+        </div>
+        <select id="untitled-track-list">
+            <option value="0">Afterlife</option>
+            <option value="1">Another Earth</option>
+            <option value="2">Are You Afraid of God</option>
+            <option value="3">Bloodbath</option>
+            <option value="4">Close My Eyes</option>
+            <option value="5">Control</option>
+            <option value="6">Eyes</option>
+            <option value="7">LIFE</option>
+            <option value="8">Magic</option>
+            <option value="9">Ramune</option>
+            <option value="10">Sea of Static</option>
+            <option value="11">Spider</option>
+            <option value="12">The Machine Is Alive</option>
+            <option value="13">Virtual Echo</option>
+            <option value="14">Wrapped in Anansi's Web</option>
+        </select>
+        
+    </div>
+
+    <p>More coming soon... My biggest album yet: <strong>Destroy & Create</strong> - 5 years in the making</p>
 
     <script>
         const albums = [
     {
         id: "christmas",
-        tracks: ["Christmas/merry christmas.mp3", "Christmas/canon in d major - remix.mp3"],
+        tracks: ["Christmas/merry christmas.mp3", "Christmas/Canon in D Major - Remix.mp3"],
         currentTrack: 0,
         audioPlayer: document.getElementById("christmas-audio-player"),
         trackList: document.getElementById("christmas-track-list"),
@@ -230,6 +242,7 @@
         id: "home",
         tracks: [
             "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
+            "HOME IS WHERE THE DUST IS/93.mp3",
             "HOME IS WHERE THE DUST IS/everything i am.mp3",
             "HOME IS WHERE THE DUST IS/purple tree.mp3",
             "HOME IS WHERE THE DUST IS/friends.mp3",
@@ -248,22 +261,23 @@
         tracks: [
             "Electric Emotions/Diva Dreams (Intro).mp3",
             "Electric Emotions/Epiphany.mp3",
-            "Electric Emotions/One Day A Computer Will Fit In Our Brain.mp3",
+            "Electric Emotions/One Day A Computer Will Fit On A Desk.mp3",
             "Electric Emotions/Electro Boy.mp3",
             "Electric Emotions/Kids 3.mp3",
             "Electric Emotions/Hawkins.mp3",
             "Electric Emotions/Don't Forget About Me.mp3",
             "Electric Emotions/Neon Tears (Intermission).mp3",
             "Electric Emotions/198x.mp3",
-            "Electric Emotions/Policy Of Truth (SelfWave Remix).mp3",
+            "Electric Emotions/Policy Of Thruth - SelfWave Remix.mp3",
             "Electric Emotions/011.mp3",
             "Electric Emotions/Rewind.mp3",
             "Electric Emotions/Comeback Kid (SelfWave Remix).mp3",
             "Electric Emotions/Midnight Escape.mp3",
-            "Electric Emotions/Stay With Me.mp3",
-            "Electric Emotions/DX Dreams (Bonus Track).mp3",
-            "Electric Emotions/Disco Queen (Bonus Track).mp3",
-            "Electric Emotions/Gloria (Bonus Track).mp3",
+            "Electric Emotions/Stay with me.mp3",
+            "Electric Emotions/It Follows.mp3",
+            "Electric Emotions/DX Dreams.mp3",
+            "Electric Emotions/Disco Queen.mp3",
+            "Electric Emotions/Gloria.mp3",
         ],
         currentTrack: 0,
         audioPlayer: document.getElementById("electric-audio-player"),
@@ -289,9 +303,7 @@
         id: "pc",
         tracks: [
             "PC/PC.mp3",
-            "PC/Control.mp3",
-            "PC/Bloodbath.mp3",
-            "PC/The Gear Machine.mp3",
+            "PC/Quarantine.mp3",
             "PC/XP.mp3",
         ],
         currentTrack: 0,
@@ -306,9 +318,21 @@
         tracks: [
             "Untitled/Afterlife.mp3",
             "Untitled/Another Earth.mp3",
+            "Untitled/are you afraid of god.mp3",
+            "Untitled/Bloodbath.mp3",
+            "Untitled/close my eyes.mp3",
+            "Untitled/Control.mp3",
+            "Untitled/eyes.mp3",
+            "Untitled/LIFE.mp3",
+            "Untitled/magic.mp3",
+            "Untitled/ramune.mp3",
+            "Untitled/Sea-of-Static.mp3",
             "Untitled/SPIDER.mp3",
+            "Untitled/The Machine Is Alive.mp3",
+            "Untitled/virtual echo.mp3",
             "Untitled/Wrapped in Anansi's Web.mp3",
-        ],
+],
+
         currentTrack: 0,
         audioPlayer: document.getElementById("untitled-audio-player"),
         trackList: document.getElementById("untitled-track-list"),
@@ -411,6 +435,54 @@ albums.forEach((album) => {
         playNextTrack(album);
     });
 });
+
+
+// Snow effect setup
+function createSnowflakes() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.textContent = "❄";
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000);
+}
+
+let snowInterval;
+
+function startSnow() {
+    if (!snowInterval) {
+        snowInterval = setInterval(createSnowflakes, 200);
+    }
+}
+
+function stopSnow() {
+    clearInterval(snowInterval);
+    snowInterval = null;
+    const snowflakes = document.querySelectorAll(".snowflake");
+    snowflakes.forEach((flake) => flake.remove());
+}
+
+// Hook snow effect to Christmas album
+albums.forEach((album) => {
+    album.audioPlayer.addEventListener("play", () => {
+        if (album.id === "christmas") {
+            startSnow();
+        } else {
+            stopSnow();
+        }
+    });
+
+    album.audioPlayer.addEventListener("pause", () => {
+        if (album.id === "christmas") {
+            stopSnow();
+        }
+    });
+});
+
 
     </script>
 </body>
