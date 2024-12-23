@@ -12,7 +12,6 @@
             padding: 20px;
             background: linear-gradient(135deg, #ffcc00, #ff6699, #6600cc); /* Gradient background */
             color: #333333; /* Dark grey text for contrast */
-            overflow: hidden; /* Prevent scrollbars from sparkles */
         }
         h1, marquee {
             font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans for the title and marquee */
@@ -20,6 +19,13 @@
         }
         h1 {
             font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Space between the title and the GIFs */
+        }
+        .note {
+            width: 50px; /* Small size for the GIF */
         }
         h2 {
             font-weight: bold;
@@ -75,12 +81,8 @@
         @keyframes blink {
             50% { visibility: hidden; }
         }
-        /* Dancing Note GIF */
-        .dancing-note {
-            margin-top: 10px;
-        }
-         /* Sparkle Effect */
-         .sparkle {
+        /* Sparkle Effect */
+        .sparkle {
             position: absolute;
             width: 5px;
             height: 5px;
@@ -103,10 +105,17 @@
                 transform: scale(1.5);
             }
         }
+        /* Melting CD */
+        .melting-cd {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-
     <marquee scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
     <h1>Samuel's Sound Vault</h1>
     <img src="dancingNote.gif" alt="Dancing Note" class="dancing-note">
