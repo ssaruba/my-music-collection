@@ -31,7 +31,7 @@
         /* Marquee Styling */
         marquee {
             font-size: 1.2em;
-            color: #a0a0a0;
+            color: #0070cb;
             font-weight: bold;
             text-shadow: 1px 1px 2px black;
             margin: 10px 0;
@@ -41,8 +41,8 @@
         .blink {
             font-size: 1.5em;
             font-weight: bold;
-            color: #2d2aeb;
-            text-shadow: 2px 2px 5px rgba(60, 89, 255, 0.7);
+            color: #ff3c3c;
+            text-shadow: 2px 2px 5px rgba(255, 108, 130, 0.7);
             animation: blink 1s step-start infinite;
         }
 
@@ -77,8 +77,10 @@
             right: 10px;
             width: 100px;
             z-index: 1000;
-            border: none !important; /* Override any other styles */
-        }
+            border: none !important; /* Ensure no border */
+            box-shadow: none !important; /* Ensure no shadow */
+            outline: none !important; /* Ensure no outline */
+}
 
         /* Snowflake Styles */
         .snowflake {
@@ -99,14 +101,10 @@
         }
 
         button, h2, img, audio {
-        margin-bottom: 15px; /* Adds 15px space below these elements */
+        margin-bottom: 20px; /* Adds 15px space below these elements */
         }
         select, .controls {
             margin-top: 20px; /* Adjust the value as needed */
-        }
-
-        .melting-cd {
-            border: none;
         }
 
     </style>
