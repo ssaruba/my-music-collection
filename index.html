@@ -159,60 +159,180 @@
         </select>
     </div>
 
+    <!-- New Album: Creations -->
+    <div class="album">
+        <h2>Creations</h2>
+        <div id="current-creations-song">Currently playing: </div>
+        <img src="Creations/CREATIONS - COVER.jpg" alt="Creations Album Cover">
+        <audio id="creations-audio-player" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <select id="creations-track-list">
+            <option value="0">Pale Blue Dot (Intro)</option>
+            <option value="1">Sunset Drive</option>
+            <option value="2">Synthetic Kiss</option>
+            <option value="3">Mariowave</option>
+            <option value="4">Mother Machine</option>
+            <option value="5">People are People</option>
+            <option value="6">Reflection</option>
+            <option value="7">Empty Room</option>
+            <option value="8">Falling</option>
+            <option value="9">Mall Dreams</option>
+            <option value="10">Warm Sunbeams</option>
+            <option value="11">T-800</option>
+            <option value="12">2414 予鋼プ</option>
+            <option value="13">Electric</option>
+            <option value="14">Rainy Nights</option>
+            <option value="15">The Last Goodbye</option>
+            <option value="16">Wave</option>
+            <option value="17">Synthracing</option>
+            <option value="18">Nostalgia</option>
+            <option value="19">HAL 9000</option>
+            <option value="20">UFO</option>
+            <option value="21">Joyride</option>
+            <option value="22">Lonely Memories</option>
+            <option value="23">Between Heaven and Hell</option>
+        </select>
+    </div>
+
     <p>Vielen Dank, dass du vorbeischaust! Musik ist immer besser, wenn sie geteilt wird. 🎵</p>
 
     <script>
         // Updated paths for correctness
-        const christmasTracks = [
-            "Christmas/merry christmas.mp3",
-            "Christmas/canon in d major - remix.mp3"
+        const homeTracks = [
+            "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
+            "HOME IS WHERE THE DUST IS/everything i am.mp3",
+            "HOME IS WHERE THE DUST IS/purple tree.mp3",
+            "HOME IS WHERE THE DUST IS/friends.mp3",
+            "HOME IS WHERE THE DUST IS/jock.mp3",
+            "HOME IS WHERE THE DUST IS/human emotional experience.mp3"
         ];
-        let currentChristmasTrack = 0;
-        const christmasAudioPlayer = document.getElementById("christmas-audio-player");
-        const christmasTrackList = document.getElementById("christmas-track-list");
-        let snowflakeInterval;
 
-        christmasAudioPlayer.src = christmasTracks[currentChristmasTrack];
+        const electricTracks = [
+            "Electric Emotions/Diva Dreams (Intro).mp3",
+            "Electric Emotions/Epiphany.mp3",
+            "Electric Emotions/One Day A Computer Will Fit In Our Brain.mp3",
+            "Electric Emotions/Electro Boy.mp3",
+            "Electric Emotions/Kids 3.mp3",
+            "Electric Emotions/Hawkins.mp3",
+            "Electric Emotions/Don't Forget About Me.mp3",
+            "Electric Emotions/Neon Tears (Intermission).mp3",
+            "Electric Emotions/198x.mp3",
+            "Electric Emotions/Policy Of Truth (SelfWave Remix).mp3",
+            "Electric Emotions/011.mp3",
+            "Electric Emotions/Rewind.mp3",
+            "Electric Emotions/Comeback Kid (SelfWave Remix).mp3",
+            "Electric Emotions/Midnight Escape.mp3",
+            "Electric Emotions/Stay With Me.mp3",
+            "Electric Emotions/DX Dreams (Bonus Track).mp3",
+            "Electric Emotions/Disco Queen (Bonus Track).mp3",
+            "Electric Emotions/Gloria (Bonus Track).mp3"
+        ];
 
-        // Snow effect
-        function createSnowflake() {
-            const snowflake = document.createElement("div");
-            snowflake.className = "snowflake";
-            snowflake.style.left = Math.random() * 100 + "%";
-            snowflake.textContent = "❄";
-            document.body.appendChild(snowflake);
-            setTimeout(() => snowflake.remove(), 5000);
-        }
+        const cuteTracks = [
+            "cute little world/cute little world.mp3",
+            "cute little world/Our Planet.mp3"
+        ];
 
-        function startSnowEffect() {
-            if (!snowflakeInterval) {
-                snowflakeInterval = setInterval(createSnowflake, 200);
-            }
-        }
+        const pcTracks = [
+            "PC/PC.mp3",
+            "PC/Control.mp3",
+            "PC/Bloodbath.mp3",
+            "PC/The-Gear-Machine.mp3",
+            "PC/XP.mp3"
+        ];
 
-        function stopSnowEffect() {
-            clearInterval(snowflakeInterval);
-            snowflakeInterval = null;
-        }
+        const untitledTracks = [
+            "Untitled/Afterlife.mp3",
+            "Untitled/Another Earth.mp3",
+            "Untitled/SPIDER.mp3",
+            "Untitled/Wrapped in Anansi's Web.mp3"
+        ];
 
-        christmasAudioPlayer.addEventListener("play", () => {
-            startSnowEffect();
+        const creationsTracks = [
+            "Creations/Pale Blue Dot (Intro).flac",
+            "Creations/Sunset Drive.flac",
+            "Creations/Synthetic Kiss.flac",
+            "Creations/Mariowave.flac",
+            "Creations/Mother Machine.flac",
+            "Creations/People are People.flac",
+            "Creations/Reflection.flac",
+            "Creations/Empty Room.flac",
+            "Creations/Falling.flac",
+            "Creations/Mall Dreams.flac",
+            "Creations/Warm Sunbeams.flac",
+            "Creations/T-800.mp3",
+            "Creations/2414 予鋼プ.flac",
+            "Creations/Electric.flac",
+            "Creations/rainy nights.m4a",
+            "Creations/The Last Goodbye.flac",
+            "Creations/Wave.flac",
+            "Creations/Synthracing.flac",
+            "Creations/Nostalgia.flac",
+            "Creations/HAL 9000.flac",
+            "Creations/UFO.m4a",
+            "Creations/Joyride.flac",
+            "Creations/Lonely Memories.flac",
+            "Creations/Between Heaven and Hell.flac"
+        ];
+
+        let currentHomeTrack = 0;
+        let currentElectricTrack = 0;
+        let currentCuteTrack = 0;
+        let currentPcTrack = 0;
+        let currentUntitledTrack = 0;
+        let currentCreationsTrack = 0;
+
+        const homeAudioPlayer = document.getElementById("audio-player");
+        const electricAudioPlayer = document.getElementById("electric-audio-player");
+        const cuteAudioPlayer = document.getElementById("cute-audio-player");
+        const pcAudioPlayer = document.getElementById("pc-audio-player");
+        const untitledAudioPlayer = document.getElementById("untitled-audio-player");
+        const creationsAudioPlayer = document.getElementById("creations-audio-player");
+
+        homeAudioPlayer.src = homeTracks[currentHomeTrack];
+        electricAudioPlayer.src = electricTracks[currentElectricTrack];
+        cuteAudioPlayer.src = cuteTracks[currentCuteTrack];
+        pcAudioPlayer.src = pcTracks[currentPcTrack];
+        untitledAudioPlayer.src = untitledTracks[currentUntitledTrack];
+        creationsAudioPlayer.src = creationsTracks[currentCreationsTrack];
+
+        // Dropdowns and selection updates
+        document.getElementById("track-list").addEventListener("change", (e) => {
+            currentHomeTrack = parseInt(e.target.value);
+            homeAudioPlayer.src = homeTracks[currentHomeTrack];
+            homeAudioPlayer.play();
         });
 
-        christmasAudioPlayer.addEventListener("pause", () => {
-            stopSnowEffect();
+        document.getElementById("electric-track-list").addEventListener("change", (e) => {
+            currentElectricTrack = parseInt(e.target.value);
+            electricAudioPlayer.src = electricTracks[currentElectricTrack];
+            electricAudioPlayer.play();
         });
 
-        christmasAudioPlayer.addEventListener("ended", () => {
-            stopSnowEffect();
+        document.getElementById("cute-track-list").addEventListener("change", (e) => {
+            currentCuteTrack = parseInt(e.target.value);
+            cuteAudioPlayer.src = cuteTracks[currentCuteTrack];
+            cuteAudioPlayer.play();
         });
 
-        christmasTrackList.addEventListener("change", (e) => {
-            currentChristmasTrack = parseInt(e.target.value);
-            christmasAudioPlayer.src = christmasTracks[currentChristmasTrack];
-            christmasAudioPlayer.play();
+        document.getElementById("pc-track-list").addEventListener("change", (e) => {
+            currentPcTrack = parseInt(e.target.value);
+            pcAudioPlayer.src = pcTracks[currentPcTrack];
+            pcAudioPlayer.play();
         });
 
+        document.getElementById("untitled-track-list").addEventListener("change", (e) => {
+            currentUntitledTrack = parseInt(e.target.value);
+            untitledAudioPlayer.src = untitledTracks[currentUntitledTrack];
+            untitledAudioPlayer.play();
+        });
+
+        document.getElementById("creations-track-list").addEventListener("change", (e) => {
+            currentCreationsTrack = parseInt(e.target.value);
+            creationsAudioPlayer.src = creationsTracks[currentCreationsTrack];
+            creationsAudioPlayer.play();
+        });
     </script>
 </body>
 </html>
