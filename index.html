@@ -67,14 +67,10 @@
         <div id="current-home-song">Currently playing: </div>
         <img src="HOME IS WHERE THE DUST IS/HOME IS WHERE THE DUST IS - COVER.png" 
              alt="HOME IS WHERE THE DUST IS - Album Cover">
-        <audio id="audio-player" controls>
+        <audio id="home-audio-player" controls>
             Your browser does not support the audio element.
         </audio>
-        <div>
-            <button id="prev-btn">⏮ Previous</button>
-            <button id="next-btn">⏭ Next</button>
-        </div>
-        <select id="track-list">
+        <select id="home-track-list">
             <option value="0">I DON'T WANNA RUIN IT</option>
             <option value="1">EVERYTHING I AM</option>
             <option value="2">PURPLE TREE</option>
@@ -199,6 +195,11 @@
 
     <script>
         // Updated paths for correctness
+        const christmasTracks = [
+            "Christmas/merry christmas.mp3",
+            "Christmas/canon in d major - remix.mp3"
+        ];
+
         const homeTracks = [
             "HOME IS WHERE THE DUST IS/i don't wanna ruin it.mp3",
             "HOME IS WHERE THE DUST IS/everything i am.mp3",
@@ -276,63 +277,49 @@
             "Creations/Between Heaven and Hell.flac"
         ];
 
-        let currentHomeTrack = 0;
-        let currentElectricTrack = 0;
-        let currentCuteTrack = 0;
-        let currentPcTrack = 0;
-        let currentUntitledTrack = 0;
-        let currentCreationsTrack = 0;
+        function updatePlayer(audioPlayer, trackList, tracks) {
+            trackList.addEventListener("change", (e) => {
+                const trackIndex = parseInt(e.target.value);
+                audioPlayer.src = tracks[trackIndex];
+                audioPlayer.play();
+            });
+        }
 
-        const homeAudioPlayer = document.getElementById("audio-player");
-        const electricAudioPlayer = document.getElementById("electric-audio-player");
-        const cuteAudioPlayer = document.getElementById("cute-audio-player");
-        const pcAudioPlayer = document.getElementById("pc-audio-player");
-        const untitledAudioPlayer = document.getElementById("untitled-audio-player");
-        const creationsAudioPlayer = document.getElementById("creations-audio-player");
+        updatePlayer(document.getElementById("christmas-audio-player"), document.getElementById("christmas-track-list"), christmasTracks);
+        updatePlayer(document.getElementById("home-audio-player"), document.getElementById("home-track-list"), homeTracks);
+        updatePlayer(document.getElementById("electric-audio-player"), document.getElementById("electric-track-list"), electricTracks);
+        updatePlayer(document.getElementById("cute-audio-player"), document.getElementById("cute-track-list"), cuteTracks);
+        updatePlayer(document.getElementById("pc-audio-player"), document.getElementById("pc-track-list"), pcTracks);
+        updatePlayer(document.getElementById("untitled-audio-player"), document.getElementById("untitled-track-list"), untitledTracks);
+        updatePlayer(document.getElementById("creations-audio-player"), document.getElementById("creations-track-list"), creationsTracks);
 
-        homeAudioPlayer.src = homeTracks[currentHomeTrack];
-        electricAudioPlayer.src = electricTracks[currentElectricTrack];
-        cuteAudioPlayer.src = cuteTracks[currentCuteTrack];
-        pcAudioPlayer.src = pcTracks[currentPcTrack];
-        untitledAudioPlayer.src = untitledTracks[currentUntitledTrack];
-        creationsAudioPlayer.src = creationsTracks[currentCreationsTrack];
+        // Snow effect for Christmas songs
+        let snowflakeInterval;
+        const christmasAudioPlayer = document.getElementById("christmas-audio-player");
 
-        // Dropdowns and selection updates
-        document.getElementById("track-list").addEventListener("change", (e) => {
-            currentHomeTrack = parseInt(e.target.value);
-            homeAudioPlayer.src = homeTracks[currentHomeTrack];
-            homeAudioPlayer.play();
-        });
+        function createSnowflake() {
+            const snowflake = document.createElement("div");
+            snowflake.className = "snowflake";
+            snowflake.style.left = Math.random() * 100 + "%";
+            snowflake.textContent = "❄";
+            document.body.appendChild(snowflake);
+            setTimeout(() => snowflake.remove(), 5000);
+        }
 
-        document.getElementById("electric-track-list").addEventListener("change", (e) => {
-            currentElectricTrack = parseInt(e.target.value);
-            electricAudioPlayer.src = electricTracks[currentElectricTrack];
-            electricAudioPlayer.play();
-        });
+        function startSnowEffect() {
+            if (!snowflakeInterval) {
+                snowflakeInterval = setInterval(createSnowflake, 200);
+            }
+        }
 
-        document.getElementById("cute-track-list").addEventListener("change", (e) => {
-            currentCuteTrack = parseInt(e.target.value);
-            cuteAudioPlayer.src = cuteTracks[currentCuteTrack];
-            cuteAudioPlayer.play();
-        });
+        function stopSnowEffect() {
+            clearInterval(snowflakeInterval);
+            snowflakeInterval = null;
+        }
 
-        document.getElementById("pc-track-list").addEventListener("change", (e) => {
-            currentPcTrack = parseInt(e.target.value);
-            pcAudioPlayer.src = pcTracks[currentPcTrack];
-            pcAudioPlayer.play();
-        });
-
-        document.getElementById("untitled-track-list").addEventListener("change", (e) => {
-            currentUntitledTrack = parseInt(e.target.value);
-            untitledAudioPlayer.src = untitledTracks[currentUntitledTrack];
-            untitledAudioPlayer.play();
-        });
-
-        document.getElementById("creations-track-list").addEventListener("change", (e) => {
-            currentCreationsTrack = parseInt(e.target.value);
-            creationsAudioPlayer.src = creationsTracks[currentCreationsTrack];
-            creationsAudioPlayer.play();
-        });
+        christmasAudioPlayer.addEventListener("play", startSnowEffect);
+        christmasAudioPlayer.addEventListener("pause", stopSnowEffect);
+        christmasAudioPlayer.addEventListener("ended", stopSnowEffect);
     </script>
 </body>
 </html>
