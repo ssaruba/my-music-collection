@@ -435,55 +435,6 @@ albums.forEach((album) => {
         playNextTrack(album);
     });
 });
-
-
-// Snow effect setup
-function createSnowflakes() {
-    const snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄";
-    snowflake.style.left = Math.random() * 100 + "vw";
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
-    document.body.appendChild(snowflake);
-
-    setTimeout(() => {
-        snowflake.remove();
-    }, 5000);
-}
-
-let snowInterval;
-
-function startSnow() {
-    if (!snowInterval) {
-        snowInterval = setInterval(createSnowflakes, 200);
-    }
-}
-
-function stopSnow() {
-    clearInterval(snowInterval);
-    snowInterval = null;
-    const snowflakes = document.querySelectorAll(".snowflake");
-    snowflakes.forEach((flake) => flake.remove());
-}
-
-// Hook snow effect to Christmas album
-albums.forEach((album) => {
-    album.audioPlayer.addEventListener("play", () => {
-        if (album.id === "christmas") {
-            startSnow();
-        } else {
-            stopSnow();
-        }
-    });
-
-    album.audioPlayer.addEventListener("pause", () => {
-        if (album.id === "christmas") {
-            stopSnow();
-        }
-    });
-});
-
-
     </script>
 </body>
 </html>
