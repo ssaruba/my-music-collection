@@ -11,8 +11,8 @@
             margin: 0;
             text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #fbd2e7, #fde7f6, #e7f4fb); /* Softer gradient */
-            color: #333333; /* Dark grey text for contrast */
+            background: linear-gradient(135deg, #fbd2e7, #fde7f6, #e7f4fb);
+            color: #333333;
             overflow-x: hidden;
         }
 
@@ -26,14 +26,6 @@
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .title img {
-            height: 50px;
         }
 
         /* Marquee Styling */
@@ -63,65 +55,45 @@
         /* Image Styles (Album Covers) */
         img {
             max-width: 300px;
-            max-height: 300px; /* Ensures the images don't exceed 300px in height */
+            max-height: 300px;
             margin: 20px auto;
             display: block;
-            border: 4px solid #fff; /* Adds a border for aesthetics */
-            box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.6); /* Glowing border effect */
-            border-radius: 8px; /* Adds a slight rounding to the corners */
+            border: 4px solid #fff;
+            box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
         }
 
         .pixel-divider {
-            height: 10px;
+            height: 1px;
             background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-            margin: 20px 0;
-}
+            margin: 2px 0;
+        }
 
         /* Melting CD */
         .melting-cd {
-
             position: fixed;
             bottom: 10px;
             right: 10px;
-            width: 80px;
+            width: 100px;
             z-index: 1000;
         }
 
-        img[alt="Dancing Note"], .melting-cd {
-            border: none; /* Removes border for GIFs */
-            box-shadow: none; /* Removes shadow for GIFs */
-            width: 100px; /* Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        /* Sparkle Effect */
-        .sparkle {
+        /* Snowflake Styles */
+        .snowflake {
+            color: #fff;
+            font-size: 1.5em;
             position: absolute;
-            width: 5px;
-            height: 5px;
-            background: radial-gradient(circle, #fff 50%, rgba(255, 255, 255, 0) 100%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 2s ease-out infinite;
+            top: -10px;
+            animation: fall 5s linear infinite;
         }
 
-        @keyframes sparkle {
+        @keyframes fall {
             0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1);
+                transform: translateY(0);
             }
             100% {
-                opacity: 0;
-                transform: scale(1.5);
+                transform: translateY(100vh);
             }
-        }
-
-        button, h2, img, audio {
-        margin-bottom: 15px; /* Adds 15px space below these elements */
         }
     </style>
 </head>
@@ -129,18 +101,15 @@
     <!-- Scrolling Text with Comic Sans -->
     <marquee class="comic-sans" scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
 
-    <!-- Title with Comic Sans -->
-    <div class="title">
-        <img src="dancingNote.gif" alt="Dancing Note">
-        <h1 class="comic-sans">Samuel's Sound Vault</h1>
-        <img src="dancingNote.gif" alt="Dancing Note">
-    </div>
+    <!-- Title -->
+    <h1 class="title comic-sans">Samuel's Sound Vault</h1>
 
     <!-- Blinking Text -->
     <p class="blink">Fröhliche Weihnachten Papa! 🎄</p>
 
     <!-- Pixel Divider -->
     <div class="pixel-divider"></div>
+
     <!-- Christmas Bonus Album -->
     <div class="bonus album">
         <h2>Christmas</h2>
@@ -538,68 +507,53 @@ albums.forEach((album) => {
     });
 });
 
-
 // Snow effect setup
 function createSnowflakes() {
-    const snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄";
-    snowflake.style.left = Math.random() * 100 + "vw";
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
-    document.body.appendChild(snowflake);
-
-    setTimeout(() => {
-        snowflake.remove();
-    }, 5000);
-}
-
-let snowInterval;
-
-function startSnow() {
-    if (!snowInterval) {
-        snowInterval = setInterval(createSnowflakes, 200);
-    }
-}
-
-function stopSnow() {
-    clearInterval(snowInterval);
-    snowInterval = null;
-    const snowflakes = document.querySelectorAll(".snowflake");
-    snowflakes.forEach((flake) => flake.remove());
-}
-
-// Hook snow effect to Christmas album
-albums.forEach((album) => {
-    album.audioPlayer.addEventListener("play", () => {
-        if (album.id === "christmas") {
-            startSnow();
-        } else {
-            stopSnow();
-        }
-    });
-
-    album.audioPlayer.addEventListener("pause", () => {
-        if (album.id === "christmas") {
-            stopSnow();
-        }
-    });
-});
-function createSparkle() {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.style.left = Math.random() * 100 + 'vw';
-            sparkle.style.top = Math.random() * 100 + 'vh';
-            sparkle.style.animationDuration = Math.random() * 2 + 1 + 's';
-            document.body.appendChild(sparkle);
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.textContent = "❄";
+            snowflake.style.left = Math.random() * 100 + "vw";
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(snowflake);
 
             setTimeout(() => {
-                sparkle.remove();
-            }, 2000); // Match animation duration
+                snowflake.remove();
+            }, 5000);
         }
 
-        setInterval(createSparkle, 100); // Create a sparkle every 100ms
+        let snowInterval;
 
+        function startSnow() {
+            if (!snowInterval) {
+                snowInterval = setInterval(createSnowflakes, 200);
+            }
+        }
 
+        function stopSnow() {
+            clearInterval(snowInterval);
+            snowInterval = null;
+            const snowflakes = document.querySelectorAll(".snowflake");
+            snowflakes.forEach((flake) => flake.remove());
+        }
+
+        // Albums Setup
+        const allAudioPlayers = document.querySelectorAll("audio");
+
+        allAudioPlayers.forEach((audioPlayer) => {
+            audioPlayer.addEventListener("play", () => {
+                startSnow();
+            });
+
+            audioPlayer.addEventListener("pause", () => {
+                const anyPlaying = Array.from(allAudioPlayers).some(player => !player.paused);
+                if (!anyPlaying) stopSnow();
+            });
+
+            audioPlayer.addEventListener("ended", () => {
+                const anyPlaying = Array.from(allAudioPlayers).some(player => !player.paused);
+                if (!anyPlaying) stopSnow();
+            });
+        });
     </script>
 </body>
 </html>
