@@ -30,17 +30,16 @@
 
         /* Marquee Styling */
         marquee {
-            font-family: "Impact"; /* Early 2000s font */
+            font-family: "Impact", sans-serif !important; /* Ensure it overrides */
             font-size: 1.2em;
-            color: #000000;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px black;
+            color: #0070cb;
             margin: 10px 0;
             background: rgba(255, 255, 255, 0.8); /* Light transparent background */
             border-radius: 10px; /* Rounded corners */
             padding: 5px 10px; /* Padding inside the marquee */
             border: 2px solid #0070cb; /* Optional border for a 2000s aesthetic */
 }
+
 
         /* Blinking Text */
         .blink {
@@ -112,59 +111,75 @@
             margin-bottom: 30px; /* Adds space between controls and the next section */
         }
 
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Adjust spacing between the title and the gifs */
+        }
+
+        .title-wrapper img {
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+            display: block;
+            border: none;
+            box-shadow: none;
+        }
+
+
         @media (max-width: 768px) {
-    /* Adjust body padding */
-    body {
-        padding: 10px;
-    }
+            /* Adjust body padding */
+            body {
+                padding: 10px;
+            }
 
-    /* Title */
-    .title {
-        font-size: 2em; /* Smaller font size for smaller screens */
-    }
+            /* Title */
+            .title {
+                font-size: 2em; /* Smaller font size for smaller screens */
+            }
 
-    /* Marquee */
-    marquee {
-        font-size: 1em; /* Reduce font size for marquee */
-        padding: 5px;
-    }
+            /* Marquee */
+            marquee {
+                font-size: 1em; /* Reduce font size for marquee */
+                padding: 5px;
+            }
 
-    /* Images (Album Covers) */
-    img {
-        max-width: 100%; /* Images take up full width */
-        max-height: auto; /* Maintain aspect ratio */
-    }
+            /* Images (Album Covers) */
+            img {
+                max-width: 100%; /* Images take up full width */
+                max-height: auto; /* Maintain aspect ratio */
+            }
 
-    /* Buttons and Controls */
-    button, select, audio {
-        width: 100%; /* Stretch to full width */
-        font-size: 1em; /* Adjust font size */
-        margin-bottom: 10px; /* Reduce spacing */
-    }
+            /* Buttons and Controls */
+            button, select, audio {
+                width: 100%; /* Stretch to full width */
+                font-size: 1em; /* Adjust font size */
+                margin-bottom: 10px; /* Reduce spacing */
+            }
 
-    /* Pixel Divider */
-    .pixel-divider {
-        margin-bottom: 20px; /* Reduce spacing */
-    }
+            /* Pixel Divider */
+            .pixel-divider {
+                margin-bottom: 20px; /* Reduce spacing */
+            }
 
-    /* YouTube Link */
-    a {
-        font-size: 1em; /* Adjust font size for smaller screens */
-        padding: 5px 10px; /* Adjust padding */
-    }
+            /* YouTube Link */
+            a {
+                font-size: 1em; /* Adjust font size for smaller screens */
+                padding: 5px 10px; /* Adjust padding */
+            }
 
-    /* Melting CD */
-    .melting-cd {
-        bottom: 20px;
-        right: 20px;
-        width: 80px; /* Smaller size for phones */
-    }
+            /* Melting CD */
+            .melting-cd {
+                bottom: 20px;
+                right: 20px;
+                width: 80px; /* Smaller size for phones */
+            }
 
-    /* Album Titles */
-    h2 {
-        font-size: 1.5em; /* Smaller titles */
-    }
-}
+            /* Album Titles */
+            h2 {
+                font-size: 1.5em; /* Smaller titles */
+            }
+        }
 
 
     </style>
@@ -172,9 +187,7 @@
 <body>
     <!-- Scrolling Text with Comic Sans -->
     <marquee class="comic-sans" scrollamount="6">Welcome to Samuel's Sound Vault! 🎵</marquee>
-
-    <!-- Title -->
-    <h1 class="title comic-sans">Samuel's Sound Vault</h1>
+    
 
     <!-- Blinking Text -->
     <p class="blink">Fröhliche Weihnachten Papa und Opa! 🎄</p>
@@ -198,6 +211,12 @@
         Visit my YouTube Channel!
     </a>
 </p>
+
+    <div class="title-wrapper">
+        <img src="note.gif" alt="Note GIF">
+        <h1 class="title comic-sans">Samuel's Sound Vault</h1>
+        <img src="note.gif" alt="Note GIF">
+    </div>
 
 
     <!-- Pixel Divider -->
