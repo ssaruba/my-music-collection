@@ -40,11 +40,11 @@
 
         /* Title Styling */
         .title {
-            font-size: 3.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
-            z-index: 1;
-            position: relative; /* Above overlay */
+            padding: 10px 20px; /* Space inside the box */
+            border: 2px solid #333333; /* Adds the border */
+            border-radius: 10px; /* Optional: Makes corners rounded */
+            background-color: rgba(255, 255, 255, 0.7); /* Optional: Adds a semi-transparent background */
+            display: inline-block; /* Ensures the box wraps tightly around the title */
         }
 
         /* Marquee Styling */
@@ -142,6 +142,28 @@
             margin-top: 20px;
         }
 
+        button {
+            margin: 0 5px; /* Adds horizontal spacing between buttons */
+        }
+
+        .snowflake {
+            color: #fff;
+            font-size: 1.5em;
+            position: absolute;
+            top: -10px;
+            animation: fall 5s linear infinite;
+            pointer-events: none; /* Prevents clicks */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
         @media (max-width: 768px) {
             /* Title */
             .title {
@@ -166,6 +188,7 @@
                 width: 80px; /* Smaller size for phones */
             }
         }
+        
     </style>
 </head>
 <body>
