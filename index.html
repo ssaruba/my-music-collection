@@ -167,8 +167,12 @@
 
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
+    margin: 0; /* Removes default body margin */
+    padding: 0; /* Removes default padding */
+    overflow-x: hidden; /* Prevents any horizontal scrolling */
+    box-sizing: border-box; /* Consistent box model for the body */
+}
+
 
     .title {
         font-size: 1.5em; /* Adjust title size */
@@ -201,10 +205,13 @@
         width: 60px; /* Smaller size for melting CD */
     }
     .album {
-        padding: 10px 5px; /* Reduce padding for albums */
-        margin: 0 auto; /* Center-align albums */
-        display: block; /* Consistent block-level centering */
-    }
+    padding: 10px 5px; /* Padding: equal on top/bottom and left/right */
+    margin: 0 auto; /* Center the album container */
+    display: block; /* Block ensures alignment */
+    max-width: 90%; /* Prevents albums from stretching wider than the screen */
+    text-align: center; /* Centers content inside */
+    box-sizing: border-box; /* Consistent padding and margin calculations */
+}
 }
 
         
