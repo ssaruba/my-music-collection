@@ -161,34 +161,49 @@
         }
 
         select, .controls {
-        margin-bottom: 30px; /* Adjust spacing if necessary */
+        margin-bottom: 10px; /* Adjust spacing if necessary */
 }
 
 
-        @media (max-width: 768px) {
-            /* Title */
-            .title {
-                font-size: 2em; /* Smaller font size for smaller screens */
-            }
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
 
-            /* Marquee */
-            marquee {
-                font-size: 1em; /* Reduce font size for marquee */
-                padding: 5px;
-            }
+    .title {
+        font-size: 1.5em; /* Adjust title size */
+        padding: 8px 15px; /* Reduce padding inside the title box */
+    }
 
-            /* Title Wrapper */
-            .title-wrapper img {
-                width: 40px; /* Adjust size for smaller screens */
-            }
+    .blink {
+        font-size: 1.2em; /* Reduce blinking text size */
+    }
 
-            /* Melting CD */
-            .melting-cd {
-                bottom: 20px;
-                right: 20px;
-                width: 80px; /* Smaller size for phones */
-            }
-        }
+    img {
+        max-width: 100%; /* Ensure images scale down */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .controls {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    marquee {
+        font-size: 0.9em; /* Adjust marquee font size */
+    }
+
+    .melting-cd {
+        bottom: 10px;
+        right: 10px;
+        width: 60px; /* Smaller size for melting CD */
+    }
+    .album {
+        padding: 10px 5px; /* Reduce padding for albums */
+        margin: 0 auto; /* Center-align albums */
+    }
+}
+
         
     </style>
 </head>
