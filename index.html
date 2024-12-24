@@ -29,7 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+            background: transparent; /* Fully transparent overlay */
             pointer-events: none; /* Ensures content inside is clickable */
         }
 
@@ -94,6 +94,43 @@
             box-shadow: none;
         }
 
+        /* Pixel Divider */
+        .pixel-divider {
+            height: 3px;
+            background-color: #000000;
+            margin: 3px 0;
+            margin-bottom: 40px; /* Increases the space below the pixel divider */
+        }
+
+        /* Melting CD */
+        .melting-cd {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 100px;
+            z-index: 1000;
+            border: none !important; /* Ensure no border */
+            box-shadow: none !important; /* Ensure no shadow */
+            outline: none !important; /* Ensure no outline */
+        }
+
+        /* YouTube Link */
+        .youtube-link {
+            font-family: 'Verdana', sans-serif;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            background: linear-gradient(90deg, #ff2c2c, #ff7070);
+            padding: 5px 10px;
+            border: 2px solid #ff2c2c;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 2px black;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
             /* Title */
             .title {
@@ -110,6 +147,13 @@
             .title-wrapper img {
                 width: 40px; /* Adjust size for smaller screens */
             }
+
+            /* Melting CD */
+            .melting-cd {
+                bottom: 20px;
+                right: 20px;
+                width: 80px; /* Smaller size for phones */
+            }
         }
     </style>
 </head>
@@ -124,8 +168,15 @@
 
         <!-- Title with GIFs -->
         <div class="title-wrapper">
+            <img src="note.gif" alt="Note GIF">
             <h1 class="title comic-sans">Samuel's Sound Vault</h1>
+            <img src="note.gif" alt="Note GIF">
         </div>
+
+        <!-- YouTube Link -->
+        <a href="https://www.youtube.com/channel/UC8iEh01foeh_j337cCu1_CQ" target="_blank" class="youtube-link">
+            Visit my YouTube Channel!
+        </a>
     </div>
 
     <!-- Pixel Divider -->
